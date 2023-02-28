@@ -1,4 +1,7 @@
 ## 29.02.2023
+    - `feature`: Установлен webpack-dev-server
+        npm i -D webpack-dev-server
+
     - `feature`: Добален alias и скрипт watch
         webpack --mode development --watch - наблюдать за обновлениями
 

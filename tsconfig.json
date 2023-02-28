@@ -6,6 +6,12 @@
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
-        "jsx": "react"
+        "jsx": "react",
+        "lib": [
+            "es5",
+            "es6",
+            "es7",
+            "dom"
+        ],
     }
 }

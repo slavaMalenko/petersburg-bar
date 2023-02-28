@@ -36,6 +36,10 @@ module.exports = {
         ]
     },
 
+    devServer: {
+        port: 1010 // Порт, на котором будет запущен webpack-dev-server
+    },
+
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
