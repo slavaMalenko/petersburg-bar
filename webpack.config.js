@@ -1,5 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const paths = {
     src: path.resolve(__dirname, 'src'),
@@ -18,7 +19,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts'] // указание расширений файлов, которые webpack будет обрабатывать, и пытаться добавить автоматически (например получив запрос на index, не найдет его и попробует index.ts)
+        extensions: ['.ts', '.tsx', '.js', '.jsx'] // указание расширений файлов, которые webpack будет обрабатывать, и пытаться добавить автоматически (например получив запрос на index, не найдет его и попробует index.ts)
     },
 
     devtool: 'inline-source-map',
@@ -26,9 +27,16 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.tsx$/,
                 loader: 'ts-loader'
             } // загрузчик для обработки файлов с расширением .ts
         ]
-    }
+    },
+
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './index.html'
+        })
+    ]
 };

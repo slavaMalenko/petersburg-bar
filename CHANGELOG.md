@@ -1,6 +1,9 @@
 ## 28.02.2023
+    - `feature`: Доработка tsconfig и плагинов webpack.config.js
+
     - `feature`: Установка плагинов для сборки
         npm i webpack html-webpack-plugin clean-webpack-plugin --save-dev
+
     - `feature`: Установка react
 
     - `feature`: Настройка конфигурации webpack.config.js
