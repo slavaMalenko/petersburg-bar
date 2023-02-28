@@ -2,6 +2,9 @@
     "compilerOptions": {
         "target": "es5", // компилируем ts код в js код версии ES5
         "module": "esnext", // для поддержки динамического импорта модулей
-        "sourceMap": true
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
     }
 }
