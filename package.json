@@ -1,0 +1,22 @@
+{
+  "name": "petersburg-bar",
+  "version": "1.0.0",
+  "description": "peterburg-bar react-redux-toolkit-typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slavaMalenko/petersburg-bar.git"
+  },
+  "keywords": [
+    "react-redux-toolkit-typescript"
+  ],
+  "author": "Slava Malenko <malenko@vseslavno.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slavaMalenko/petersburg-bar/issues"
+  },
+  "homepage": "https://github.com/slavaMalenko/petersburg-bar#readme"
+}

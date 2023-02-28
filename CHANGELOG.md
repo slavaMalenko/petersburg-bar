@@ -1,0 +1,1 @@
+28.02.2023 - `feature`: Добавление package.json и CHANGELOG
