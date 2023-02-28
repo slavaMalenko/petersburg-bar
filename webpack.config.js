@@ -19,7 +19,10 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx'] // указание расширений файлов, которые webpack будет обрабатывать, и пытаться добавить автоматически (например получив запрос на index, не найдет его и попробует index.ts)
+        extensions: ['.ts', '.tsx', '.js', '.jsx'], // указание расширений файлов, которые webpack будет понимать
+        alias: {
+            '@': path.resolve(__dirname, 'src')
+        }
     },
 
     devtool: 'inline-source-map',
@@ -29,7 +32,7 @@ module.exports = {
             {
                 test: /\.tsx$/,
                 loader: 'ts-loader'
-            } // загрузчик для обработки файлов с расширением .ts
+            }
         ]
     },
 

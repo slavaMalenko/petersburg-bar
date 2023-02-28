@@ -1,21 +1,25 @@
-## 28.02.2023
-    - `feature`: Доработка tsconfig и плагинов webpack.config.js
+## 29.02.2023
+    - `feature`: Добален alias и скрипт watch
+        webpack --mode development --watch - наблюдать за обновлениями
 
-    - `feature`: Установка плагинов для сборки
+## 28.02.2023
+    - `feature`: Доработан tsconfig и плагины webpack.config.js
+
+    - `feature`: Установлены плагины для сборки
         npm i webpack html-webpack-plugin clean-webpack-plugin --save-dev
 
-    - `feature`: Установка react
+    - `feature`: Установлен react
 
-    - `feature`: Настройка конфигурации webpack.config.js
+    - `feature`: Настроена конфигурация webpack.config.js
 
-    - `feature`: Установка реакта и необходимых библиотек для ts
+    - `feature`: Установлен реакт и необходимые библиотеки для ts
         npm i react react-dom
         npm i --save-dev @types/react @types/react-dom
-    - `feature`: Установка ts-loader
+    - `feature`: Установлен ts-loader
 
-    - `feature`: npm i --save-dev typescript ts-node @types/node - Установка typescript и добавление конфигурационных файлов
+    - `feature`: npm i --save-dev typescript ts-node @types/node - Установлен typescript и добавлен конфигурационный файл
 
-    - `feature`: npm i -D webpack webpack-cli - Установка webpack
+    - `feature`: npm i -D webpack webpack-cli - Установлен webpack
         `-D - devDependencies` - только для разработки
 
-    - `feature`: Добавление package.json и CHANGELOG
+    - `feature`: Добавлен package.json и CHANGELOG
