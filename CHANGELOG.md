@@ -1,3 +1,8 @@
+## 04.03.2023
+
+    - `feature`: Установлен пакет styled-components и типы для него
+        npm i styled-components @types/styled-components
+
 ## 03.03.2023
 
     - `feature`: Настроены сборки dev и prod
