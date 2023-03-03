@@ -1,7 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import styled from 'styled-components';
 
-const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
+const TestDiv = styled.div`
+  background-color: red;
+  padding: 20px;
+`;
+
+const App: React.FC = () => (
+  <React.Fragment>
+    <TestDiv>Новый проект.</TestDiv>
+  </React.Fragment>
 );
-root.render(<div>React TS</div>);
+
+export default App;

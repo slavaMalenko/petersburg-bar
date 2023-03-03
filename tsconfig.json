@@ -1,17 +1,13 @@
 {
-    "compilerOptions": {
-        "target": "es5", // компилируем ts код в js код версии ES5
-        "module": "esnext", // для поддержки динамического импорта модулей
-        "sourceMap": true,
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "jsx": "react",
-        "lib": [
-            "es5",
-            "es6",
-            "es7",
-            "dom"
-        ],
-    }
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "es5", // компилируем ts код в js код версии ES5
+    "module": "esnext", // для поддержки динамического импорта модулей
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "lib": ["es5", "es6", "es7", "dom"]
+  }
 }

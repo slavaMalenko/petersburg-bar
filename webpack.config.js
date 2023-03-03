@@ -10,7 +10,7 @@ const paths = {
 module.exports = {
   context: paths.src, // базовая директория для точек входа и загрузчиков
   entry: {
-    app: './App.tsx', // точка входа в приложение
+    app: './index.tsx', // точка входа в приложение
   },
   output: {
     path: paths.dist, // путь для результатов сборки
