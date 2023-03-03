@@ -1,8 +1,14 @@
+## 03.03.2023
+
+    - `feature`: Настроены сборки dev и prod
+
 ## 01.03.2023
+
     - `feature`: Установлен prettier
         npm install prettier -D --save-exact
 
 ## 29.02.2023
+
     - `feature`: Добавлены некоторые файлы html и tsx
 
     - `feature`: Установлен webpack-dev-server
@@ -12,6 +18,7 @@
         webpack --mode development --watch - наблюдать за обновлениями
 
 ## 28.02.2023
+
     - `feature`: Доработан tsconfig и плагины webpack.config.js
 
     - `feature`: Установлены плагины для сборки
