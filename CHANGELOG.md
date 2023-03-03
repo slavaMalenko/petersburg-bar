@@ -1,3 +1,7 @@
+## 01.03.2023
+    - `feature`: Установлен prettier
+        npm install prettier -D --save-exact
+
 ## 29.02.2023
     - `feature`: Добавлены некоторые файлы html и tsx
 

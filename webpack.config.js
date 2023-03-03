@@ -10,7 +10,7 @@ const paths = {
 module.exports = {
     context: paths.src, // базовая директория для точек входа и загрузчиков    
     entry: {
-        app: './index'  // точка входа в приложение, наш src/index.ts файл, названием итогового бандла будет имя свойства - app
+        app: './App.tsx'  // точка входа в приложение
     },
 
     output: {
