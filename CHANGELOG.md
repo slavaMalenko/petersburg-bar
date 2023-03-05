@@ -1,3 +1,9 @@
+## 05.03.2023
+
+    - `feature`: Установлен пакет styled-reset, а также style-loader и css-loader
+        npm i styled-reset
+        npm i -D style-loader css-loader
+
 ## 04.03.2023
 
     - `feature`: Добавлены некоторые настройки, написан тестовый компонент

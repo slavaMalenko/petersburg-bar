@@ -17,7 +17,7 @@ module.exports = {
     filename: '[name].bundle.js', // название итогового бандла, получится dist/app.bundle.js
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'], // указание расширений файлов, которые webpack будет понимать
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.css'], // указание расширений файлов, которые webpack будет понимать
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
@@ -27,6 +27,10 @@ module.exports = {
       {
         test: /\.tsx$/,
         loader: 'ts-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
