@@ -1,3 +1,7 @@
+## 06.03.2023
+
+    - `feature`: Работа с импортами изображений, настройками webpack
+
 ## 05.03.2023
 
     - `feature`: Установлен пакет styled-reset, а также style-loader и css-loader

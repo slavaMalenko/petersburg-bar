@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
     "target": "es5", // компилируем ts код в js код версии ES5
-    "module": "esnext", // для поддержки динамического импорта модулей
+    "module": "commonjs", // для поддержки динамического импорта модулей
     "sourceMap": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "lib": ["es5", "es6", "es7", "dom"]
-  }
+  },
+  "exclude": ["node_modules"],
+  "include": ["src", "index.d.ts"]
 }

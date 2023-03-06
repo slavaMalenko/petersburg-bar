@@ -17,20 +17,33 @@ module.exports = {
     filename: '[name].bundle.js', // название итогового бандла, получится dist/app.bundle.js
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.css'], // указание расширений файлов, которые webpack будет понимать
+    modules: ['node_modules'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'], // указание расширений файлов, которые webpack будет понимать
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      src: path.resolve(__dirname, './src'),
     },
   },
   module: {
     rules: [
       {
-        test: /\.tsx$/,
+        test: /\.ts|\.tsx$/,
         loader: 'ts-loader',
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(gif|png|jpe?g)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/',
+            },
+          },
+        ],
       },
     ],
   },
