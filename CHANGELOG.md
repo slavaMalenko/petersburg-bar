@@ -1,5 +1,6 @@
 ## 06.03.2023
 
+    - `feature`: Добавлен репозиторий для общих стилей и ui компонент + Container
     - `feature`: Добавлен шрифт Sofia Sans Semi Condensed
     - `feature`: Работа с импортами изображений, настройками webpack
 
