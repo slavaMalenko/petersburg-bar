@@ -1,5 +1,6 @@
 ## 06.03.2023
 
+    - `feature`: Добавлен шрифт Sofia Sans Semi Condensed
     - `feature`: Работа с импортами изображений, настройками webpack
 
 ## 05.03.2023

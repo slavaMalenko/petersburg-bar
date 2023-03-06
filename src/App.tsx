@@ -1,15 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Container } from './ui';
+import { Header } from './components/pages/header/Header';
 
-const TestDiv = styled.div`
-  background-color: red;
-  padding: 20px;
-`;
-
-const App: React.FC = () => (
-  <React.Fragment>
-    <TestDiv>Новый проект.</TestDiv>
-  </React.Fragment>
-);
+const App: React.FC = () => {
+  return (
+    <Container>
+      <Header />
+    </Container>
+  );
+};
 
 export default App;
