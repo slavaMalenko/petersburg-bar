@@ -14,7 +14,8 @@ module.exports = {
   },
   output: {
     path: paths.dist, // путь для результатов сборки
-    filename: '[name].bundle.js', // название итогового бандла, получится dist/app.bundle.js
+    filename: '[name].bundle.js', // название итогового бандла, получится dist/app.bundle.js,
+    publicPath: '/',
   },
   resolve: {
     modules: ['node_modules'],
@@ -49,6 +50,7 @@ module.exports = {
   },
   devServer: {
     port: 1010, // Порт, на котором будет запущен webpack-dev-server
+    historyApiFallback: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
