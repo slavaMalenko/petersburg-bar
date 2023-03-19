@@ -1,4 +1,4 @@
-import React, { ReactElement, JSXElementConstructor } from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 const SContainer = styled.div`
@@ -9,10 +9,7 @@ const SContainer = styled.div`
 `;
 
 interface IContainer {
-  children:
-    | string
-    | number
-    | ReactElement<any, string | JSXElementConstructor<any>>;
+  children: ReactNode;
 }
 
 const Container: React.FC<IContainer> = ({ children }) => (

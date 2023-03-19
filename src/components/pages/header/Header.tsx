@@ -64,6 +64,7 @@ const Header: React.FC = ({}) => {
 
   const changeActiveItem: TChangeActiveItem = (item) => {
     dispatch(setNavigationActive(item));
+    localStorage.setItem('path', item);
   };
 
   return (

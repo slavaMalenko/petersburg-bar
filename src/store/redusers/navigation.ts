@@ -5,7 +5,7 @@ export type navigationState = {
 };
 
 const initialState: navigationState = {
-  activeNavigation: '/',
+  activeNavigation: localStorage.getItem('path') || '/',
 };
 
 const navigation = createSlice({
