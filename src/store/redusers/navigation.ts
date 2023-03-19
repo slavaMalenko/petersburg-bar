@@ -1,0 +1,22 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+export type navigationState = {
+  activeNavigation: string;
+};
+
+const initialState: navigationState = {
+  activeNavigation: '/',
+};
+
+const navigation = createSlice({
+  name: 'navigation',
+  initialState,
+  reducers: {
+    setNavigationActive(state, action: PayloadAction<string>) {
+      state.activeNavigation = action.payload;
+    },
+  },
+});
+
+export const { setNavigationActive } = navigation.actions;
+export default navigation.reducer;
