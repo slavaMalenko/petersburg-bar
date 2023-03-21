@@ -1,23 +1,30 @@
 import React from 'react';
-import Navigation from './Navigation';
 import styled from 'styled-components';
 import logo from './img/logo.png';
-import { fontFamilySofiaSansSemiCondensed } from '../../../ui/commonStyles';
-import { useAppDicpatch, useAppSelector } from '../../../store/store';
-import { setNavigationActive } from '../../../store/redusers/navigation';
+import {
+  colorWhite,
+  fontFamilySofiaSansSemiCondensed,
+  textTransformUppercase,
+} from '../../../../ui';
+import {
+  setNavigationActive,
+  useAppDicpatch,
+  useAppSelector,
+} from '../../../../store';
+import { Navigation } from './Navigation';
 
 const SHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 20px;
 
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 150%;
-  color: #ffffff;
   ${fontFamilySofiaSansSemiCondensed}
+  ${colorWhite}
 `;
 const SLogo = styled.div`
   width: 160px;
@@ -29,7 +36,7 @@ const SButton = styled.div`
   padding: 10px 30px;
   border: 2px solid #d5621d;
   border-radius: 5px;
-  text-transform: uppercase;
+  ${textTransformUppercase}
   cursor: pointer;
 
   transition: all linear 0.3s;

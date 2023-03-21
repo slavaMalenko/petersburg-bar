@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
-import { Container } from './ui';
-import { Header } from './components/pages/header/Header';
-import { EmptyComponent } from './ui/EmptyComponent';
-import { useAppSelector } from './store/store';
+import { Container, EmptyComponent } from './ui';
+import { useAppSelector } from './store';
+import { Header, Preview } from './components/pages/home';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -21,7 +20,7 @@ const App: React.FC = () => {
 
       <main>
         <Routes>
-          <Route path='/' element={<EmptyComponent />} />
+          <Route path='/' element={<Preview />} />
           <Route path='/navigation' element={<EmptyComponent />} />
           <Route path='/poster' element={<EmptyComponent />} />
           <Route path='/cooperation' element={<EmptyComponent />} />

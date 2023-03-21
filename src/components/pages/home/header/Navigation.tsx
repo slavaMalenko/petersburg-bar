@@ -2,12 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { StyledProps } from 'styled-components';
 import { NavigationItems, TChangeActiveItem } from './Header';
-import { navigationState } from '../../../store/redusers/navigation';
-
-interface ISNavigation extends navigationState {
-  items: NavigationItems[];
-  changeActiveItem: TChangeActiveItem;
-}
+import { navigationState } from '../../../../store/redusers/navigation';
 
 type TNavigationProps = StyledProps<{
   isActive: boolean;
@@ -20,9 +15,9 @@ const SNavigationItem = styled(Link)(
     font-weight: 600;
     font-size: 17px;
     line-height: 150%;
-    color: #ffffff;
     text-decoration: none;
     transition: all 0.3s;
+    color: #fff;
     &: hover {
       color: rgb(213, 98, 29);
     }
@@ -35,6 +30,10 @@ const SNavigation = styled.div`
   align-items: center;
 `;
 
+interface ISNavigation extends navigationState {
+  items: NavigationItems[];
+  changeActiveItem: TChangeActiveItem;
+}
 const Navigation: React.FC<ISNavigation> = ({
   items,
   activeNavigation,
@@ -54,4 +53,4 @@ const Navigation: React.FC<ISNavigation> = ({
   </SNavigation>
 );
 
-export default Navigation;
+export { Navigation };
