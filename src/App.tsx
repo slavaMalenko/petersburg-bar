@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { Container, EmptyComponent } from './ui';
 import { useAppSelector } from './store';
-import { Header, Preview } from './components/pages/home';
+import { Header, Home } from './components';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const App: React.FC = () => {
 
       <main>
         <Routes>
-          <Route path='/' element={<Preview />} />
+          <Route path='/' element={<Home />} />
           <Route path='/navigation' element={<EmptyComponent />} />
           <Route path='/poster' element={<EmptyComponent />} />
           <Route path='/cooperation' element={<EmptyComponent />} />

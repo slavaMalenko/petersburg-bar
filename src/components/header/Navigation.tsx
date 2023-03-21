@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { StyledProps } from 'styled-components';
 import { NavigationItems, TChangeActiveItem } from './Header';
-import { navigationState } from '../../../../store/redusers/navigation';
+import { navigationState } from '../../store';
 
 type TNavigationProps = StyledProps<{
   isActive: boolean;

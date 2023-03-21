@@ -5,12 +5,12 @@ import {
   colorWhite,
   fontFamilySofiaSansSemiCondensed,
   textTransformUppercase,
-} from '../../../../ui';
+} from '../../ui';
 import {
   setNavigationActive,
   useAppDicpatch,
   useAppSelector,
-} from '../../../../store';
+} from '../../store';
 import { Navigation } from './Navigation';
 
 const SHeader = styled.header`

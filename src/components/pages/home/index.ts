@@ -1,2 +1,1 @@
-export { Header } from './header';
-export { Preview } from './preview';
+export { Home } from './Home';
