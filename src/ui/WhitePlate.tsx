@@ -16,19 +16,14 @@ const SWhitePlate = styled.div(
   ({ commonStyles }: TWhitePlateStyles) => `
   cursor: pointer;
   ${textTransformUppercase}
-  padding: 10px 20px;
+  padding: 10px 0;
+  text-align: center;
   background-color: #fff;
   font-weight: 700;
   font-size: 20px;
   border-radius: 5px;
-  opacity: 0.6;
   transition: all 0.2s linear;
   ${commonStyles ? commonStyles : ''}
-
-  &:hover {
-    transform: scale(1.03);
-    opacity: 1;
-  }
   ${fontFamilySofiaSansSemiCondensed}
 `
 );

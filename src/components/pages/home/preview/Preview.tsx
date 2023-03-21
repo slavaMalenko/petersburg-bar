@@ -25,9 +25,16 @@ const SPreviewImg = styled.div`
   background-size: 100%;
 `;
 export const SWhitePlateStyles = css`
+  width: 150px;
   position: absolute;
   top: 300px;
   left: 60px;
+  opacity: 0.6;
+
+  &:hover {
+    transform: scale(1.03);
+    opacity: 1;
+  }
 `;
 const SPreviewShortTag = styled.section`
   position: absolute;

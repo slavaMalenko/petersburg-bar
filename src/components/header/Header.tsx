@@ -54,7 +54,7 @@ export type TChangeActiveItem = (item: string) => void;
 
 const navigationItems: NavigationItems[] = [
   { name: 'Главная', link: '/' },
-  { name: 'Меню', link: '/navigation' },
+  { name: 'Меню', link: '/menu' },
   { name: 'Афиша', link: '/poster' },
   { name: 'Сотрудничество', link: '/cooperation' },
   { name: 'Галерея', link: '/gallery' },
