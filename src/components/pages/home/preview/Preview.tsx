@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import photo_preview from './img/photo_preview.png';
 import {
+  WhitePlate,
   colorWhite,
   displayFlex,
   fontFamilySofiaSansSemiCondensed,
@@ -23,26 +24,10 @@ const SPreviewImg = styled.div`
   background: url(${photo_preview}) no-repeat 50%;
   background-size: 100%;
 `;
-const SPreviewShortInfo = styled.div`
+export const SWhitePlateStyles = css`
   position: absolute;
   top: 300px;
   left: 60px;
-  cursor: pointer;
-
-  ${textTransformUppercase}
-  padding: 10px 20px;
-  background-color: #fff;
-  font-weight: 700;
-  font-size: 20px;
-  border-radius: 5px;
-  opacity: 0.6;
-  transition: all 0.2s linear;
-
-  &:hover {
-    transform: scale(1.03);
-    opacity: 1;
-  }
-  ${fontFamilySofiaSansSemiCondensed}
 `;
 const SPreviewShortTag = styled.section`
   position: absolute;
@@ -61,7 +46,7 @@ export const Preview: React.FC = ({}) => {
   return (
     <SPreviewContent>
       <SPreviewImg>
-        <SPreviewShortInfo>Since 1996</SPreviewShortInfo>
+        <WhitePlate title='Since 1996' commonStyles={SWhitePlateStyles} />
         <SPreviewShortTag>True. Fontanka. Underground.</SPreviewShortTag>
       </SPreviewImg>
 
