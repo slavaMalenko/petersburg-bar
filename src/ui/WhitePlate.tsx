@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled, {
   StyledProps,
   FlattenSimpleInterpolation,
@@ -31,9 +31,29 @@ const SWhitePlate = styled.div(
 interface IWhitePlate {
   title: string;
   commonStyles?: TCommonStyles;
+  scrollToTitle?: boolean;
 }
-const WhitePlate: React.FC<IWhitePlate> = ({ title, commonStyles }) => (
-  <SWhitePlate commonStyles={commonStyles}>{title}</SWhitePlate>
-);
+const WhitePlate: React.FC<IWhitePlate> = ({
+  scrollToTitle = false,
+  title,
+  commonStyles,
+}) => {
+  const reff = useRef(null);
+  return (
+    <SWhitePlate
+      commonStyles={commonStyles}
+      onClick={() =>
+        scrollToTitle &&
+        window.scrollTo({
+          top: reff.current.offsetTop - 30,
+          behavior: 'smooth',
+        })
+      }
+      ref={reff}
+    >
+      {title}
+    </SWhitePlate>
+  );
+};
 
 export { WhitePlate };

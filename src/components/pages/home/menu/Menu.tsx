@@ -5,7 +5,7 @@ import { WhitePlate } from '../../../../ui';
 export const SWhitePlateStyles = css`
   font-size: 16px;
   max-width: 240px;
-  margin: 100px auto 20px;
+  margin: 100px auto 30px;
   font-weight: 900;
 `;
 
@@ -15,6 +15,7 @@ const Menu: React.FC = ({}) => {
       <WhitePlate
         title='Top “Manhattan” menu'
         commonStyles={SWhitePlateStyles}
+        scrollToTitle
       />
     </>
   );
