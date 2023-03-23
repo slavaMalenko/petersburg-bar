@@ -1,6 +1,7 @@
 ## 23.03.2023
 
-    - `bugfix`: Добавлен скролл к WhitePlate
+    - `feature`: Разработан компонент Title
+    - `feature`: Добавлен скролл к WhitePlate
 
 ## 21.03.2023
 

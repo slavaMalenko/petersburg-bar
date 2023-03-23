@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from 'styled-components';
-import { WhitePlate } from '../../../../ui';
+import { Title, WhitePlate } from '../../../../ui';
 
 export const SWhitePlateStyles = css`
   font-size: 16px;
@@ -17,6 +17,8 @@ const Menu: React.FC = ({}) => {
         commonStyles={SWhitePlateStyles}
         scrollToTitle
       />
+
+      <Title text='Кухня' />
     </>
   );
 };

@@ -7,25 +7,25 @@ import {
   fontFamilySofiaSansSemiCondensed,
   textTransformUppercase,
 } from './commonStyles';
+import { TCommonStyles } from './commonTypes';
 
-type TCommonStyles = string | FlattenSimpleInterpolation;
 type TWhitePlateStyles = StyledProps<{
   commonStyles?: TCommonStyles;
 }>;
 const SWhitePlate = styled.div(
   ({ commonStyles }: TWhitePlateStyles) => `
-  cursor: pointer;
-  ${textTransformUppercase}
-  padding: 10px 0;
-  text-align: center;
-  background-color: #fff;
-  font-weight: 700;
-  font-size: 20px;
-  border-radius: 5px;
-  transition: all 0.2s linear;
-  ${commonStyles ? commonStyles : ''}
-  ${fontFamilySofiaSansSemiCondensed}
-`
+    cursor: pointer;
+    ${textTransformUppercase}
+    padding: 10px 0;
+    text-align: center;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+    ${commonStyles ? commonStyles : ''}
+    ${fontFamilySofiaSansSemiCondensed}
+  `
 );
 
 interface IWhitePlate {
