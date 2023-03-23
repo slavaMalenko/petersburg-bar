@@ -4,6 +4,7 @@ export {
   flexDirectionColumn,
   justifyCenter,
   alignItemsCenter,
+  flexWrap,
 } from './flex';
 export {
   fontFamilySofiaSansSemiCondensed,
@@ -11,3 +12,4 @@ export {
   textAlignCenter,
   textTransformUppercase,
 } from './text';
+export { pointer } from './common';

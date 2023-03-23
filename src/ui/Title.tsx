@@ -15,7 +15,8 @@ const STitle = styled.div(
   ({ commonStyles }: TTitleStyles) => `
     font-size: 40px;
     font-weight: 900;
-    margin-top: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     ${textAlignCenter}
     ${fontFamilySofiaSansSemiCondensed}
     ${textTransformUppercase}

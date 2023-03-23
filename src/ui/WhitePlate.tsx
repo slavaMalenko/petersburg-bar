@@ -1,10 +1,8 @@
 import React, { useRef } from 'react';
-import styled, {
-  StyledProps,
-  FlattenSimpleInterpolation,
-} from 'styled-components';
+import styled, { StyledProps } from 'styled-components';
 import {
   fontFamilySofiaSansSemiCondensed,
+  pointer,
   textTransformUppercase,
 } from './commonStyles';
 import { TCommonStyles } from './commonTypes';
@@ -14,7 +12,6 @@ type TWhitePlateStyles = StyledProps<{
 }>;
 const SWhitePlate = styled.div(
   ({ commonStyles }: TWhitePlateStyles) => `
-    cursor: pointer;
     ${textTransformUppercase}
     padding: 10px 0;
     text-align: center;
@@ -25,6 +22,7 @@ const SWhitePlate = styled.div(
     transition: all 0.2s linear;
     ${commonStyles ? commonStyles : ''}
     ${fontFamilySofiaSansSemiCondensed}
+    ${pointer}
   `
 );
 

@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { navigation, concerts } from './redusers';
+import { navigation, concerts, menu } from './redusers';
 
 const store = configureStore({
-  reducer: { navigation, concerts },
+  reducer: { navigation, concerts, menu },
 });
 
 export default store;

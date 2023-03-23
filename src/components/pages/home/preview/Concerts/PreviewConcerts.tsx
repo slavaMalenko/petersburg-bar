@@ -6,6 +6,7 @@ import {
   displayFlex,
   justifyCenter,
   textAlignCenter,
+  pointer
 } from '../../../../../ui';
 
 const SPreviewConcerts = styled.div`
@@ -25,7 +26,6 @@ const FadeInAnimation = keyframes`
   to { opacity: 1; }
 `;
 const SPreviewImg = styled.img`
-  cursor: pointer;
   width: 170px;
   height: 200px;
   transition: all 0.2s linear;
@@ -36,6 +36,7 @@ const SPreviewImg = styled.img`
   &:hover {
     transform: scale(1.03);
   }
+  ${pointer}
 `;
 
 interface IPreviewConcerts {

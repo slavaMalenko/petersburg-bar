@@ -5,6 +5,7 @@ import {
   colorWhite,
   fontFamilySofiaSansSemiCondensed,
   textTransformUppercase,
+  pointer,
 } from '../../ui';
 import {
   setNavigationActive,
@@ -37,7 +38,7 @@ const SButton = styled.div`
   border: 2px solid #d5621d;
   border-radius: 5px;
   ${textTransformUppercase}
-  cursor: pointer;
+  ${pointer}
 
   transition: all linear 0.3s;
   &: hover {

@@ -6,6 +6,7 @@ import {
   fontFamilySofiaSansSemiCondensed,
   textAlignCenter,
   textTransformUppercase,
+  pointer,
 } from '../../../../../ui';
 import { useState } from 'react';
 import { PreviewConcerts } from './PreviewConcerts';
@@ -36,13 +37,13 @@ const SConcertsNavigateItem = styled.div(
     ${textTransformUppercase}
     font-weight: 700;
     width: 50%;
-    cursor: pointer;
     padding: 15px 0;
     background: #2d130d;
     border-radius: 5px 5px 0px 0px;
     transition: all .2s linear;
     ${isActive ? `background: rgba(213, 98, 29, 0.1);` : ''}
     ${fontFamilySofiaSansSemiCondensed}
+    ${pointer}
     ${colorWhite}
     ${textAlignCenter}
   `

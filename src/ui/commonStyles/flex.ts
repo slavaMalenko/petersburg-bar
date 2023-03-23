@@ -15,3 +15,6 @@ export const alignItemsCenter = css`
 export const flexDirectionColumn = css`
   flex-direction: column;
 `;
+export const flexWrap = css`
+  flex-wrap: wrap;
+`;
