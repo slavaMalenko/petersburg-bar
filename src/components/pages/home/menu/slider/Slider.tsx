@@ -20,7 +20,7 @@ import {
 } from '../../../../../ui';
 
 const SliderContainer = styled.div`
-  margin-bottom: 400px;
+  margin-bottom: 20px;
   ${displayFlex}
   ${justifySpaceBetween}
   ${alignItemsCenter}

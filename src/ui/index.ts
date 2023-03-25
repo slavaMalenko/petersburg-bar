@@ -2,6 +2,7 @@ export { Container } from './Container';
 export { EmptyComponent } from './EmptyComponent';
 export { WhitePlate } from './WhitePlate';
 export { Title } from './Title';
+export { Button } from './Button';
 export {
   displayFlex,
   justifySpaceBetween,

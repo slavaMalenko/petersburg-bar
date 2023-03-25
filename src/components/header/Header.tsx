@@ -1,12 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import logo from './img/logo.png';
-import {
-  colorWhite,
-  fontFamilySofiaSansSemiCondensed,
-  textTransformUppercase,
-  pointer,
-} from '../../ui';
+import { colorWhite, fontFamilySofiaSansSemiCondensed, Button } from '../../ui';
 import {
   setNavigationActive,
   useAppDicpatch,
@@ -33,19 +28,9 @@ const SLogo = styled.div`
   background: url(${logo}) no-repeat 50%;
   background-size: 100%;
 `;
-const SButton = styled.div`
-  padding: 10px 30px;
-  border: 2px solid #d5621d;
-  border-radius: 5px;
-  ${textTransformUppercase}
-  ${pointer}
-
-  transition: all linear 0.3s;
-  &: hover {
-    background-color: rgb(213, 98, 29);
-  }
+export const CButton = css`
+  font-size: 15px;
 `;
-
 export type NavigationItems = {
   name: string;
   link: string;
@@ -72,7 +57,6 @@ const Header: React.FC = ({}) => {
 
   const changeActiveItem: TChangeActiveItem = (item) => {
     dispatch(setNavigationActive(item));
-    localStorage.setItem('path', item);
   };
 
   return (
@@ -83,7 +67,7 @@ const Header: React.FC = ({}) => {
         activeNavigation={activeNavigation}
         changeActiveItem={changeActiveItem}
       />
-      <SButton>Бронирование</SButton>
+      <Button text='Бронирование' commonStyles={CButton} hoverRight />
     </SHeader>
   );
 };

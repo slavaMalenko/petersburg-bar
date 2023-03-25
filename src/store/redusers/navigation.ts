@@ -14,6 +14,7 @@ const navigation = createSlice({
   reducers: {
     setNavigationActive(state, action: PayloadAction<string>) {
       state.activeNavigation = action.payload;
+      localStorage.setItem('path', action.payload);
     },
   },
 });
