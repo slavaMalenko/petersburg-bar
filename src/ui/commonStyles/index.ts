@@ -12,4 +12,4 @@ export {
   textAlignCenter,
   textTransformUppercase,
 } from './text';
-export { pointer } from './common';
+export { pointer, cursorDefault, selectNone } from './common';

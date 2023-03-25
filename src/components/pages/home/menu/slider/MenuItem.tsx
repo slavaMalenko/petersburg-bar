@@ -8,6 +8,7 @@ import {
   flexDirectionColumn,
   colorWhite,
   pointer,
+  selectNone,
 } from '../../../../../ui';
 
 export const SPrice = styled.div`
@@ -21,8 +22,10 @@ export const SPrice = styled.div`
   ${pointer}
 `;
 export const MenuItemContainer = styled.div`
-  width: 48%;
+  width: 485px;
+  height: 140px;
   margin-bottom: 15px;
+  margin-right: 20px;
   position: relative;
   box-sizing: border-box;
   padding: 15px;
@@ -64,6 +67,7 @@ export const MenuItemContainer = styled.div`
   &:hover ${SPrice} {
     background: #d5621d;
   }
+  ${selectNone}
   ${pointer}
   ${colorWhite}
   ${fontFamilySofiaSansSemiCondensed}
@@ -86,7 +90,12 @@ export const SInfoBlock = styled.div`
   ${justifySpaceBetween};
   ${alignItemsCenter};
 `;
-export const SDescription = styled.div``;
+export const SDescription = styled.div`
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+`;
 export const STitle = styled.div`
   font-weight: 700;
   font-size: 25px;

@@ -14,4 +14,6 @@ export {
   textAlignCenter,
   textTransformUppercase,
   pointer,
+  selectNone,
+  cursorDefault,
 } from './commonStyles';

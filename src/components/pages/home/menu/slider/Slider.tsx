@@ -1,5 +1,9 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import React, { useState } from 'react';
+import styled, {
+  css,
+  StyledProps,
+  FlattenSimpleInterpolation,
+} from 'styled-components';
 import Vector from './img/Vector.png';
 import { useAppSelector } from '../../../../../store';
 import { MenuItem } from './MenuItem';
@@ -10,6 +14,9 @@ import {
   alignItemsCenter,
   flexWrap,
   pointer,
+  flexDirectionColumn,
+  selectNone,
+  cursorDefault,
 } from '../../../../../ui';
 
 const SliderContainer = styled.div`
@@ -24,22 +31,32 @@ const Button = css`
   height: 50px;
   background: #d5621d;
   border-radius: 5px;
+  z-index: 100;
   transition: all 0.2s linear;
-  ${pointer}
+  ${selectNone}
   ${displayFlex}
   ${justifyCenter}
   ${alignItemsCenter}
-
+`;
+type TTitleStyles = StyledProps<{
+  isActive?: boolean | FlattenSimpleInterpolation;
+}>;
+const SButtonRight = styled.div<TTitleStyles>`
+  ${Button}
+  ${({ isActive }) => (isActive ? pointer : cursorDefault)};
+  transform: rotate(180deg);
+  background: ${({ isActive }) => (isActive ? '#d5621d' : '#8a6854')};
   &:hover {
-    background: #d55200;
+    background: ${({ isActive }) => (isActive ? '#ff6200' : '#8a6854')};
   }
 `;
-const SButtonLeft = styled.div`
+const SButtonLeft = styled.div<TTitleStyles>`
   ${Button}
-`;
-const SButtonRight = styled.div`
-  ${Button}
-  transform: rotate(180deg);
+  ${({ isActive }) => (isActive ? pointer : cursorDefault)};
+  background: ${({ isActive }) => (isActive ? '#d5621d' : '#8a6854')};
+  &:hover {
+    background: ${({ isActive }) => (isActive ? '#ff6200' : '#8a6854')};
+  }
 `;
 
 const SImg = styled.img`
@@ -48,33 +65,78 @@ const SImg = styled.img`
 `;
 
 const SContent = styled.div`
-  max-width: 1000px;
-  min-height: 50px;
+  width: 1015px;
+  height: 635px;
+  position: relative;
+  overflow: hidden;
+`;
+
+const SContentAbsolute = styled.div<{ left: number }>`
+  position: absolute;
+  height: 620px;
+  top: 5px;
+  left: ${({ left }) => left}px;
+  transition: all 0.3s linear;
   ${displayFlex}
   ${flexWrap}
-  ${justifySpaceBetween}
+  ${flexDirectionColumn}
 `;
 
 interface ISlider {}
 
 const Slider: React.FC<ISlider> = ({}) => {
+  const [left, setLeft] = useState(
+    localStorage.getItem('left') ? +localStorage.getItem('left') : 5
+  );
+  const [totalElements, setTotalElements] = useState(
+    localStorage.getItem('totalElements')
+      ? +localStorage.getItem('totalElements')
+      : 8
+  );
   const { menuItems } = useAppSelector(({ menu: { menu: menuItems } }) => ({
     menuItems,
   }));
 
   return (
     <SliderContainer>
-      <SButtonLeft>
+      <SButtonLeft
+        isActive={totalElements > 8}
+        onClick={() => {
+          const newLeft = left < 0 ? left + 500 : 5;
+          setLeft(newLeft);
+          localStorage.setItem('left', `${newLeft}`);
+
+          const newTotalElements =
+            totalElements > 8 ? totalElements - 4 : totalElements;
+          setTotalElements(newTotalElements);
+          localStorage.setItem('totalElements', `${newTotalElements}`);
+        }}
+      >
         <SImg src={Vector} />
       </SButtonLeft>
 
       <SContent>
-        {menuItems.map((data) => (
-          <MenuItem data={data} />
-        ))}
+        <SContentAbsolute left={left}>
+          {menuItems.map((data, index) => (
+            <MenuItem key={`${data} ${index}`} data={data} />
+          ))}
+        </SContentAbsolute>
       </SContent>
 
-      <SButtonRight>
+      <SButtonRight
+        isActive={totalElements <= menuItems.length}
+        onClick={() => {
+          if (menuItems.length > totalElements) {
+            const newLeft = left - 500;
+            setLeft(newLeft);
+            localStorage.setItem('left', `${newLeft}`);
+
+            const newTotalElements = totalElements + 4;
+            setTotalElements(newTotalElements);
+            localStorage.setItem('totalElements', `${newTotalElements}`);
+          }
+        }}
+      >
         <SImg src={Vector} />
       </SButtonRight>
     </SliderContainer>

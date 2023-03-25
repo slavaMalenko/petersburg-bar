@@ -5,6 +5,7 @@ import {
   textTransformUppercase,
   fontFamilySofiaSansSemiCondensed,
   textAlignCenter,
+  selectNone,
 } from './commonStyles';
 import { TCommonStyles } from './commonTypes';
 
@@ -17,6 +18,7 @@ const STitle = styled.div(
     font-weight: 900;
     margin-top: 30px;
     margin-bottom: 30px;
+    ${selectNone}
     ${textAlignCenter}
     ${fontFamilySofiaSansSemiCondensed}
     ${textTransformUppercase}
