@@ -35,10 +35,6 @@ const SWhitePlateStyles = css`
   max-width: 240px;
   font-weight: 900;
 `;
-const STitleStyles = css`
-  letter-spacing: 3px;
-  font-size: 45px;
-`;
 const SButtonStyles = css`
   margin: 30px 0 0;
 `;
@@ -61,7 +57,7 @@ export const Description: React.FC<IDescription> = ({
         commonStyles={SWhitePlateStyles}
         scrollToTitle
       />
-      <Title text={blockTitle} commonStyles={STitleStyles} />
+      <Title text={blockTitle} />
 
       {descriptionList.map((item, index) => (
         <SDescription key={`${item} ${index}`}>{item}</SDescription>

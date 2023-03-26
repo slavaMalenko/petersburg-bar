@@ -13,7 +13,7 @@ const descriptionList = [
 const SContainer = styled.section`
   ${displayFlex}
   ${justifySpaceBetween}
-  margin: 40px 0px 20px;
+  margin: 40px 0px 65px;
 `;
 const SImg = styled.img`
   width: 33.3%;

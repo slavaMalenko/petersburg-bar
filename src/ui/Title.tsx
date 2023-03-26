@@ -14,7 +14,8 @@ type TTitleStyles = StyledProps<{
 }>;
 const STitle = styled.div(
   ({ commonStyles }: TTitleStyles) => `
-    font-size: 40px;
+    letter-spacing: 3px;
+    font-size: 45px;
     font-weight: 900;
     margin-top: 20px;
     margin-bottom: 20px;
