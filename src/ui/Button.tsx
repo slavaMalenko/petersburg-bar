@@ -18,7 +18,7 @@ const SContainer = styled.div`
 `;
 
 const SButtonHover = styled.div`
-  background: rgb(213, 98, 29);
+  background: #ff6200;
   top: 0;
   left: -405px;
   width: 400px;
@@ -65,13 +65,7 @@ const SButton = styled.div(
       background: ${filling ? '#ff6200' : 'rgb(213, 98, 29)'};
     }
 
-    ${
-      hoverRight
-        ? `&:hover ${SButtonHover} {
-        left: 0;
-    }`
-        : ''
-    }
+    ${hoverRight ? `&:hover ${SButtonHover} { left: 0; }` : ''}
     ${filling && !hoverRight ? `background: rgb(213, 98, 29);` : ''}
     ${verticalMargin ? `margin: ${verticalMargin}px 0;` : ''}
     ${marginBottom ? `margin-bottom: ${marginBottom}px;` : ''}

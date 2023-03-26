@@ -16,8 +16,8 @@ const STitle = styled.div(
   ({ commonStyles }: TTitleStyles) => `
     font-size: 40px;
     font-weight: 900;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     ${selectNone}
     ${textAlignCenter}
     ${fontFamilySofiaSansSemiCondensed}
@@ -29,8 +29,11 @@ const STitle = styled.div(
 
 interface ITitle {
   text: string;
+  commonStyles?: TCommonStyles;
 }
 
-const Title: React.FC<ITitle> = ({ text }) => <STitle>{text}</STitle>;
+const Title: React.FC<ITitle> = ({ text, commonStyles }) => (
+  <STitle commonStyles={commonStyles}>{text}</STitle>
+);
 
 export { Title };

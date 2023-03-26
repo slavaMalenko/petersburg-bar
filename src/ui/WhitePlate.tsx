@@ -3,6 +3,7 @@ import styled, { StyledProps } from 'styled-components';
 import {
   fontFamilySofiaSansSemiCondensed,
   pointer,
+  selectNone,
   textTransformUppercase,
 } from './commonStyles';
 import { TCommonStyles } from './commonTypes';
@@ -13,6 +14,7 @@ type TWhitePlateStyles = StyledProps<{
 const SWhitePlate = styled.div(
   ({ commonStyles }: TWhitePlateStyles) => `
     ${textTransformUppercase}
+    ${selectNone}
     padding: 10px 0;
     text-align: center;
     background-color: #fff;

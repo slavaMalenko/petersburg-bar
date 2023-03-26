@@ -8,7 +8,7 @@ import { setNavigationActive, useAppDicpatch } from '../../../../store';
 export const SWhitePlateStyles = css`
   font-size: 16px;
   max-width: 240px;
-  margin: 70px auto 30px;
+  margin: 40px auto 30px;
   font-weight: 900;
 `;
 
@@ -20,7 +20,7 @@ const Menu: React.FC = ({}) => {
     dispatch(setNavigationActive('/menu'));
   };
   return (
-    <>
+    <section>
       <WhitePlate
         title='Top “Manhattan” menu'
         commonStyles={SWhitePlateStyles}
@@ -29,14 +29,8 @@ const Menu: React.FC = ({}) => {
 
       <Title text='Кухня' />
       <Slider />
-      <Button
-        onClick={toMenu}
-        marginBottom={20}
-        text='Всё меню'
-        center
-        hoverRight
-      />
-    </>
+      <Button onClick={toMenu} marginBottom={20} text='Всё меню' center />
+    </section>
   );
 };
 
