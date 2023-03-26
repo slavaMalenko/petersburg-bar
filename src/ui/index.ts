@@ -3,6 +3,7 @@ export { EmptyComponent } from './EmptyComponent';
 export { WhitePlate } from './WhitePlate';
 export { Title } from './Title';
 export { Button } from './Button';
+export { RetractableBlocks } from './retractableBlocks';
 export {
   displayFlex,
   justifySpaceBetween,
