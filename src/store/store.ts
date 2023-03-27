@@ -1,9 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { navigation, concerts, menu, technicalRider } from './redusers';
+import {
+  navigation,
+  concerts,
+  menu,
+  technicalRider,
+  soundEngineers,
+} from './redusers';
 
 const store = configureStore({
-  reducer: { navigation, concerts, menu, technicalRider },
+  reducer: { navigation, concerts, menu, technicalRider, soundEngineers },
 });
 
 export default store;

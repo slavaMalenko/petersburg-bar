@@ -6,14 +6,17 @@ import {
   MWhitePlate,
   appearanceOnTheTop,
   displayFlex,
+  justifyCenter,
 } from '../../../../ui';
 import { TechnicalRiderList } from './TechnicalRiderList';
+import { SoundEngineers } from './SoundEngineers';
 
 const Section = styled(motion.section)`
   margin-bottom: 300px;
 `;
 const SContainer = styled.div`
   ${displayFlex}
+  ${justifyCenter}
 `;
 const SWhitePlateStyles = css`
   font-size: 16px;
@@ -35,6 +38,7 @@ export const TechnicalRider: React.FC = ({}) => (
 
     <SContainer>
       <TechnicalRiderList />
+      <SoundEngineers />
     </SContainer>
   </Section>
 );

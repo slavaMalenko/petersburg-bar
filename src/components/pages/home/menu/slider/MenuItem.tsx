@@ -10,6 +10,7 @@ import {
   colorWhite,
   pointer,
   selectNone,
+  hoverFrame,
 } from '../../../../../ui';
 
 export const SPrice = styled.div`
@@ -27,44 +28,8 @@ export const MenuItemContainer = styled.div`
   height: 140px;
   margin-bottom: 15px;
   margin-right: 20px;
-  position: relative;
-  box-sizing: border-box;
   padding: 15px;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    transition: 0.3s ease-in-out;
-    width: 0;
-    height: 0;
-  }
-  &::before {
-    top: -5px;
-    left: -5px;
-    border-top: 0px solid #d5621d;
-    border-left: 0px solid #d5621d;
-  }
-
-  &::after {
-    right: -5px;
-    bottom: -5px;
-    border-bottom: 0px solid #d5621d;
-    border-right: 0px solid #d5621d;
-  }
-  &:hover::before {
-    border-top: 1px solid #d5621d;
-    border-left: 1px solid #d5621d;
-  }
-  &:hover::after {
-    border-bottom: 1px solid #d5621d;
-    border-right: 1px solid #d5621d;
-  }
-  &:hover::before,
-  &:hover::after {
-    width: calc(100% + 9px);
-    height: calc(100% + 9px);
-  }
+  ${hoverFrame};
   &:hover ${SPrice} {
     background: #d5621d;
   }

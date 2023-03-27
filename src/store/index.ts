@@ -1,2 +1,6 @@
 export { useAppDicpatch, useAppSelector } from './store';
-export { setNavigationActive, navigationState } from './redusers';
+export {
+  setNavigationActive,
+  navigationState,
+  soundEngineer,
+} from './redusers';

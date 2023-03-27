@@ -46,33 +46,32 @@ interface IDescription {
   descriptionList: string[];
 }
 
-const Description: React.FC<IDescription> = forwardRef<
-  HTMLDivElement,
-  IDescription
->(({ plateTitle, blockTitle, descriptionList }, ref) => {
-  return (
-    <SContainer ref={ref}>
-      <WhitePlate
-        title={plateTitle}
-        commonStyles={SWhitePlateStyles}
-        scrollToTitle
-      />
-      <Title text={blockTitle} />
+const Description = forwardRef<HTMLDivElement, IDescription>(
+  ({ plateTitle, blockTitle, descriptionList }, ref) => {
+    return (
+      <SContainer ref={ref}>
+        <WhitePlate
+          title={plateTitle}
+          commonStyles={SWhitePlateStyles}
+          scrollToTitle
+        />
+        <Title text={blockTitle} />
 
-      {descriptionList.map((item, index) => (
-        <SDescription key={`${item} ${index}`}>{item}</SDescription>
-      ))}
+        {descriptionList.map((item, index) => (
+          <SDescription key={`${item} ${index}`}>{item}</SDescription>
+        ))}
 
-      <Button
-        marginBottom={10}
-        text='Подробнее'
-        commonStyles={SButtonStyles}
-        center
-        hoverRight
-      />
-    </SContainer>
-  );
-});
+        <Button
+          marginBottom={10}
+          text='Подробнее'
+          commonStyles={SButtonStyles}
+          center
+          hoverRight
+        />
+      </SContainer>
+    );
+  }
+);
 
 export { Description };
 export const MDescription = motion(Description);

@@ -4,7 +4,7 @@ import { useAppSelector } from '../../../../store';
 import { RetractableBlocks } from '../../../../ui';
 
 const SContainer = styled.div`
-  width: 50%;
+  width: 45%;
 `;
 const SListUl = styled.ul`
   list-style: inside;

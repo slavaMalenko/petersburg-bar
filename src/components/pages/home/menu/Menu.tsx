@@ -29,7 +29,7 @@ const Menu: React.FC = ({}) => {
     <motion.section
       initial='hidden'
       whileInView='visible'
-      viewport={{ amount: 0.25 }}
+      viewport={{ amount: 0.15 }}
     >
       <MWhitePlate
         custom={1}
@@ -43,7 +43,7 @@ const Menu: React.FC = ({}) => {
       <MSlider custom={3} variants={appearanceOnTheTop()} />
       <MButton
         custom={4}
-        variants={appearanceOnTheTop(undefined, 0.3)}
+        variants={appearanceOnTheTop(undefined, 0.2)}
         onClick={toMenu}
         marginBottom={20}
         text='Всё меню'
