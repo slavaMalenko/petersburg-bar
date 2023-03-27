@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { MDescription } from './Description';
 import {
   appearanceOnTheTop,
+  cursorGrab,
+  cursorGrabbing,
   displayFlex,
   justifySpaceBetween,
 } from '../../../../ui';
@@ -22,6 +24,11 @@ const SContainer = styled(motion.section)`
 `;
 const SImg = styled(motion.img)`
   width: 33.3%;
+  ${cursorGrab}
+
+  &:active {
+    ${cursorGrabbing}
+  }
 `;
 
 export const AboutEstablishments: React.FC = ({}) => {
@@ -38,7 +45,13 @@ export const AboutEstablishments: React.FC = ({}) => {
         blockTitle='Банкеты'
         descriptionList={descriptionList}
       />
-      <SImg custom={2} variants={appearanceOnTheTop()} src={Rectangle} />
+      <SImg
+        drag='x'
+        dragConstraints={{ left: 0, right: 0 }}
+        custom={2}
+        variants={appearanceOnTheTop()}
+        src={Rectangle}
+      />
       <MDescription
         custom={3}
         variants={appearanceOnTheTop()}

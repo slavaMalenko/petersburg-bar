@@ -13,4 +13,11 @@ export {
   textAlignCenter,
   textTransformUppercase,
 } from './text';
-export { pointer, cursorDefault, selectNone, hoverFrame } from './common';
+export {
+  pointer,
+  cursorDefault,
+  cursorGrab,
+  cursorGrabbing,
+  selectNone,
+  hoverFrame,
+} from './common';

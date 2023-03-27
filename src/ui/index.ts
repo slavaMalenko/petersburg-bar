@@ -20,6 +20,8 @@ export {
   selectNone,
   cursorDefault,
   hoverFrame,
+  cursorGrab,
+  cursorGrabbing,
 } from './commonStyles';
 export {
   appearanceOnTheLeft,

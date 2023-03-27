@@ -14,19 +14,33 @@ import {
   hoverFrame,
   justifySpaceAround,
   pointer,
+  selectNone,
   textTransformUppercase,
 } from '../../../../ui';
 import { soundEngineer } from '../../../../store';
 
+const SName = styled(motion.div)`
+  ${colorWhite};
+  ${fontFamilySofiaSansSemiCondensed};
+  ${textTransformUppercase};
+  font-weight: 700;
+  margin-bottom: 7px;
+  z-index: 100;
+  transition: all 0.2s linear;
+`;
 const SContainer = styled(motion.div)`
   ${displayFlex};
   ${flexDirectionColumn};
   ${alignItemsCenter};
   ${pointer};
   ${hoverFrame};
-  padding: 15px;
+  ${selectNone}
+  padding: 20px;
   &:hover {
     transform: scale(1.03);
+  }
+  &:hover ${SName} {
+    color: rgba(213, 98, 29, 1);
   }
 `;
 const SImg = styled(motion.img)`
@@ -34,13 +48,6 @@ const SImg = styled(motion.img)`
   height: 185px;
   margin-bottom: 25px;
   z-index: 100;
-`;
-const SName = styled(motion.div)`
-  ${colorWhite};
-  ${fontFamilySofiaSansSemiCondensed};
-  ${textTransformUppercase};
-  font-weight: 700;
-  margin-bottom: 7px;
 `;
 const SIcons = styled(motion.div)`
   ${displayFlex};
@@ -59,13 +66,13 @@ export const SoundEngineer: React.FC<ISoundEngineer> = ({
   return (
     <SContainer
       initial='hidden'
+      onClick={() => setRotate(!rotate)}
       whileInView='visible'
       viewport={{ amount: 0.1 }}
     >
       <SImg
         src={photo}
-        animate={{ rotate: rotate ? 360 : 0 }}
-        onClick={() => setRotate(!rotate)}
+        animate={{ rotate: rotate ? 360 : 0, scale: rotate ? 0.85 : 1.05 }}
       />
 
       <SName variants={appearanceOnTheRight(undefined, 0.2)}>{surname}</SName>

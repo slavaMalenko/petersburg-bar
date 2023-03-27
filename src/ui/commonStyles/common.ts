@@ -6,6 +6,12 @@ export const pointer = css`
 export const cursorDefault = css`
   cursor: default;
 `;
+export const cursorGrab = css`
+  cursor: grab;
+`;
+export const cursorGrabbing = css`
+  cursor: grabbing;
+`;
 export const selectNone = css`
   user-select: none;
 `;
