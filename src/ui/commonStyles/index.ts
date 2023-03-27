@@ -1,6 +1,7 @@
 export {
   displayFlex,
   justifySpaceBetween,
+  justifySpaceAround,
   flexDirectionColumn,
   justifyCenter,
   alignItemsCenter,
@@ -12,4 +13,4 @@ export {
   textAlignCenter,
   textTransformUppercase,
 } from './text';
-export { pointer, cursorDefault, selectNone } from './common';
+export { pointer, cursorDefault, selectNone, hoverFrame } from './common';

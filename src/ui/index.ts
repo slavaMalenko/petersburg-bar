@@ -7,6 +7,7 @@ export { RetractableBlocks } from './retractableBlocks';
 export {
   displayFlex,
   justifySpaceBetween,
+  justifySpaceAround,
   flexDirectionColumn,
   justifyCenter,
   alignItemsCenter,
@@ -18,5 +19,11 @@ export {
   pointer,
   selectNone,
   cursorDefault,
+  hoverFrame,
 } from './commonStyles';
-export { appearanceOnTheLeft, appearanceOnTheTop } from './animation';
+export {
+  appearanceOnTheLeft,
+  appearanceOnTheRight,
+  appearanceOnTheTop,
+} from './animation';
+export { TelegramIcon, MTelegramIcon, VkIcon, MVkIcon } from './Icon';

@@ -6,6 +6,9 @@ export const displayFlex = css`
 export const justifySpaceBetween = css`
   justify-content: space-between;
 `;
+export const justifySpaceAround = css`
+  justify-content: space-around;
+`;
 export const justifyCenter = css`
   justify-content: center;
 `;
