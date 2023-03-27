@@ -1,4 +1,5 @@
-import React from 'react';
+import { forwardRef } from 'react';
+import { motion } from 'framer-motion';
 import styled, { StyledProps } from 'styled-components';
 import {
   colorWhite,
@@ -35,7 +36,7 @@ type TButtonStyles = StyledProps<{
   filling?: boolean;
   hoverRight?: boolean;
 }>;
-const SButton = styled.div(
+const SButton = styled(motion.div)(
   ({
     commonStyles,
     verticalMargin,
@@ -88,41 +89,49 @@ interface IButton {
   onClick?: any;
 }
 
-const Button: React.FC<IButton> = ({
-  text,
-  commonStyles,
-  verticalMargin,
-  marginBottom,
-  onClick,
-  filling = true,
-  center = false,
-  hoverRight = false,
-}) =>
-  center ? (
-    <SContainer>
+const Button = forwardRef<HTMLDivElement, IButton>(
+  (
+    {
+      text,
+      commonStyles,
+      verticalMargin,
+      marginBottom,
+      onClick,
+      filling = true,
+      center = false,
+      hoverRight = false,
+    },
+    ref
+  ) =>
+    center ? (
+      <SContainer>
+        <SButton
+          ref={ref}
+          commonStyles={commonStyles}
+          onClick={() => onClick && onClick()}
+          verticalMargin={verticalMargin}
+          marginBottom={marginBottom}
+          filling={filling}
+          hoverRight={hoverRight}
+        >
+          <SButtonText>{text}</SButtonText>
+          <SButtonHover />
+        </SButton>
+      </SContainer>
+    ) : (
       <SButton
-        commonStyles={commonStyles}
-        onClick={() => onClick && onClick()}
+        ref={ref}
         verticalMargin={verticalMargin}
         marginBottom={marginBottom}
         filling={filling}
         hoverRight={hoverRight}
+        commonStyles={commonStyles}
       >
         <SButtonText>{text}</SButtonText>
         <SButtonHover />
       </SButton>
-    </SContainer>
-  ) : (
-    <SButton
-      verticalMargin={verticalMargin}
-      marginBottom={marginBottom}
-      filling={filling}
-      hoverRight={hoverRight}
-      commonStyles={commonStyles}
-    >
-      <SButtonText>{text}</SButtonText>
-      <SButtonHover />
-    </SButton>
-  );
+    )
+);
 
 export { Button };
+export const MButton = motion(Button);

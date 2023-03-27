@@ -1,7 +1,13 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { css } from 'styled-components';
-import { Button, Title, WhitePlate } from '../../../../ui';
-import { Slider } from './slider';
+import {
+  MButton,
+  MTitle,
+  MWhitePlate,
+  appearanceOnTheTop,
+} from '../../../../ui';
+import { MSlider } from './slider';
 import { useNavigate } from 'react-router-dom';
 import { setNavigationActive, useAppDicpatch } from '../../../../store';
 
@@ -20,17 +26,30 @@ const Menu: React.FC = ({}) => {
     dispatch(setNavigationActive('/menu'));
   };
   return (
-    <section>
-      <WhitePlate
+    <motion.section
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ amount: 0.25 }}
+    >
+      <MWhitePlate
+        custom={1}
+        variants={appearanceOnTheTop()}
         title='Top “Manhattan” menu'
         commonStyles={SWhitePlateStyles}
         scrollToTitle
       />
 
-      <Title text='Кухня' />
-      <Slider />
-      <Button onClick={toMenu} marginBottom={20} text='Всё меню' center />
-    </section>
+      <MTitle text='Кухня' custom={2} variants={appearanceOnTheTop()} />
+      <MSlider custom={3} variants={appearanceOnTheTop()} />
+      <MButton
+        custom={4}
+        variants={appearanceOnTheTop(undefined, 0.3)}
+        onClick={toMenu}
+        marginBottom={20}
+        text='Всё меню'
+        center
+      />
+    </motion.section>
   );
 };
 

@@ -1,7 +1,12 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { Description } from './Description';
-import { displayFlex, justifySpaceBetween } from '../../../../ui';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { MDescription } from './Description';
+import {
+  appearanceOnTheTop,
+  displayFlex,
+  justifySpaceBetween,
+} from '../../../../ui';
 import Rectangle from './img/Rectangle.png';
 
 const descriptionList = [
@@ -10,25 +15,33 @@ const descriptionList = [
   'Eu sodales netus faucibus interdum interdum platea massa egestas. Facilisis donec gravida pretium diam semper at id eleifend.',
 ];
 
-const SContainer = styled.section`
+const SContainer = styled(motion.section)`
   ${displayFlex}
   ${justifySpaceBetween}
   margin: 40px 0px 65px;
 `;
-const SImg = styled.img`
+const SImg = styled(motion.img)`
   width: 33.3%;
 `;
 
 export const AboutEstablishments: React.FC = ({}) => {
   return (
-    <SContainer>
-      <Description
+    <SContainer
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ amount: 0.1 }}
+    >
+      <MDescription
+        custom={1}
+        variants={appearanceOnTheTop()}
         plateTitle='Top “Manhattan” events'
         blockTitle='Банкеты'
         descriptionList={descriptionList}
       />
-      <SImg src={Rectangle} />
-      <Description
+      <SImg custom={2} variants={appearanceOnTheTop()} src={Rectangle} />
+      <MDescription
+        custom={3}
+        variants={appearanceOnTheTop()}
         plateTitle='Top “Manhattan” tourists'
         blockTitle='Туристы'
         descriptionList={descriptionList}

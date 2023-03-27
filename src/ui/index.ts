@@ -1,8 +1,8 @@
 export { Container } from './Container';
 export { EmptyComponent } from './EmptyComponent';
-export { WhitePlate } from './WhitePlate';
-export { Title } from './Title';
-export { Button } from './Button';
+export { WhitePlate, MWhitePlate } from './WhitePlate';
+export { Title, MTitle } from './Title';
+export { Button, MButton } from './Button';
 export { RetractableBlocks } from './retractableBlocks';
 export {
   displayFlex,
@@ -19,3 +19,4 @@ export {
   selectNone,
   cursorDefault,
 } from './commonStyles';
+export { appearanceOnTheLeft, appearanceOnTheTop } from './animation';

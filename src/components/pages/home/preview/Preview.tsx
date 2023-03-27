@@ -1,8 +1,10 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 import photo_preview from './img/photo_preview.png';
 import {
-  WhitePlate,
+  MWhitePlate,
+  appearanceOnTheLeft,
   colorWhite,
   displayFlex,
   fontFamilySofiaSansSemiCondensed,
@@ -11,7 +13,7 @@ import {
 } from '../../../../ui';
 import { Concerts } from './Concerts/Concerts';
 
-const SPreviewContent = styled.section`
+const SPreviewContent = styled(motion.section)`
   ${displayFlex}
   ${justifySpaceBetween}
 `;
@@ -36,7 +38,7 @@ export const SWhitePlateStyles = css`
     opacity: 1;
   }
 `;
-const SPreviewShortTag = styled.section`
+const SPreviewShortTag = styled(motion.section)`
   position: absolute;
   top: 360px;
   left: 60px;
@@ -51,10 +53,17 @@ const SPreviewShortTag = styled.section`
 
 export const Preview: React.FC = ({}) => {
   return (
-    <SPreviewContent>
+    <SPreviewContent initial='hidden' whileInView='visible'>
       <SPreviewImg>
-        <WhitePlate title='Since 1996' commonStyles={SWhitePlateStyles} />
-        <SPreviewShortTag>True. Fontanka. Underground.</SPreviewShortTag>
+        <MWhitePlate
+          custom={1}
+          variants={appearanceOnTheLeft(0.5)}
+          title='Since 1996'
+          commonStyles={SWhitePlateStyles}
+        />
+        <SPreviewShortTag custom={2} variants={appearanceOnTheLeft()}>
+          True. Fontanka. Underground.
+        </SPreviewShortTag>
       </SPreviewImg>
 
       <Concerts />

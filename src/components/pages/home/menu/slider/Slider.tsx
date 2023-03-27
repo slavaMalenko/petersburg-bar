@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState, forwardRef } from 'react';
+import { motion } from 'framer-motion';
 import styled, {
   css,
   StyledProps,
@@ -6,7 +7,7 @@ import styled, {
 } from 'styled-components';
 import Vector from './img/Vector.png';
 import { useAppSelector } from '../../../../../store';
-import { MenuItem } from './MenuItem';
+import { MMenuItem } from './MenuItem';
 import {
   displayFlex,
   justifyCenter,
@@ -17,9 +18,10 @@ import {
   flexDirectionColumn,
   selectNone,
   cursorDefault,
+  appearanceOnTheTop,
 } from '../../../../../ui';
 
-const SliderContainer = styled.div`
+const SliderContainer = styled(motion.div)`
   margin-bottom: 20px;
   ${displayFlex}
   ${justifySpaceBetween}
@@ -84,7 +86,7 @@ const SContentAbsolute = styled.div<{ left: number }>`
 
 interface ISlider {}
 
-const Slider: React.FC<ISlider> = ({}) => {
+const Slider = forwardRef<HTMLDivElement, ISlider>(({}, ref) => {
   const [left, setLeft] = useState(
     localStorage.getItem('left') ? +localStorage.getItem('left') : 5
   );
@@ -98,7 +100,12 @@ const Slider: React.FC<ISlider> = ({}) => {
   }));
 
   return (
-    <SliderContainer>
+    <SliderContainer
+      ref={ref}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ amount: 0.1 }}
+    >
       <SButtonLeft
         isActive={totalElements > 8}
         onClick={() => {
@@ -118,7 +125,12 @@ const Slider: React.FC<ISlider> = ({}) => {
       <SContent>
         <SContentAbsolute left={left}>
           {menuItems.map((data, index) => (
-            <MenuItem key={`${data} ${index}`} data={data} />
+            <MMenuItem
+              custom={index}
+              variants={appearanceOnTheTop()}
+              key={`${data} ${index}`}
+              data={data}
+            />
           ))}
         </SContentAbsolute>
       </SContent>
@@ -141,6 +153,7 @@ const Slider: React.FC<ISlider> = ({}) => {
       </SButtonRight>
     </SliderContainer>
   );
-};
+});
 
 export { Slider };
+export const MSlider = motion(Slider);

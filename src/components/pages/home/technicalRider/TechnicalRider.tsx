@@ -1,8 +1,17 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
-import { Title, WhitePlate, displayFlex } from '../../../../ui';
+import {
+  MTitle,
+  MWhitePlate,
+  appearanceOnTheTop,
+  displayFlex,
+} from '../../../../ui';
 import { TechnicalRiderList } from './TechnicalRiderList';
 
+const Section = styled(motion.section)`
+  margin-bottom: 300px;
+`;
 const SContainer = styled.div`
   ${displayFlex}
 `;
@@ -14,16 +23,18 @@ const SWhitePlateStyles = css`
 `;
 
 export const TechnicalRider: React.FC = ({}) => (
-  <section>
-    <WhitePlate
+  <Section initial='hidden' whileInView='visible' viewport={{ amount: 0.1 }}>
+    <MWhitePlate
+      custom={1}
+      variants={appearanceOnTheTop()}
       title='Top “Manhattan” party'
       commonStyles={SWhitePlateStyles}
       scrollToTitle
     />
-    <Title text='Техрайдер' />
+    <MTitle custom={2} variants={appearanceOnTheTop()} text='Техрайдер' />
 
     <SContainer>
       <TechnicalRiderList />
     </SContainer>
-  </section>
+  </Section>
 );

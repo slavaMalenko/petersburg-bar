@@ -1,4 +1,5 @@
-import React from 'react';
+import { forwardRef } from 'react';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import {
   displayFlex,
@@ -109,25 +110,26 @@ interface IMenuItem {
   data: any;
 }
 
-const MenuItem: React.FC<IMenuItem> = ({
-  data: { src, name, description, price, weight },
-}) => {
-  return (
-    <MenuItemContainer>
-      <SImg src={src} />
+const MenuItem = forwardRef<HTMLDivElement, IMenuItem>(
+  ({ data: { src, name, description, price, weight } }, ref) => {
+    return (
+      <MenuItemContainer ref={ref}>
+        <SImg src={src} />
 
-      <SContent>
-        <SInfoBlock>
-          <STitle>{name}</STitle>
-          <SPrice>{price} ₽</SPrice>
-        </SInfoBlock>
+        <SContent>
+          <SInfoBlock>
+            <STitle>{name}</STitle>
+            <SPrice>{price} ₽</SPrice>
+          </SInfoBlock>
 
-        <SWeight>{weight} гр</SWeight>
+          <SWeight>{weight} гр</SWeight>
 
-        <SDescription>{description}</SDescription>
-      </SContent>
-    </MenuItemContainer>
-  );
-};
+          <SDescription>{description}</SDescription>
+        </SContent>
+      </MenuItemContainer>
+    );
+  }
+);
 
 export { MenuItem };
+export const MMenuItem = motion(MenuItem);

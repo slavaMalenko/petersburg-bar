@@ -1,4 +1,5 @@
-import React from 'react';
+import { forwardRef } from 'react';
+import { motion } from 'framer-motion';
 import styled, { StyledProps } from 'styled-components';
 import {
   colorWhite,
@@ -12,7 +13,7 @@ import { TCommonStyles } from './commonTypes';
 type TTitleStyles = StyledProps<{
   commonStyles?: TCommonStyles;
 }>;
-const STitle = styled.div(
+const STitle = styled(motion.h1)(
   ({ commonStyles }: TTitleStyles) => `
     letter-spacing: 3px;
     font-size: 45px;
@@ -33,8 +34,13 @@ interface ITitle {
   commonStyles?: TCommonStyles;
 }
 
-const Title: React.FC<ITitle> = ({ text, commonStyles }) => (
-  <STitle commonStyles={commonStyles}>{text}</STitle>
+const Title = forwardRef<HTMLDivElement, ITitle>(
+  ({ text, commonStyles }, ref) => (
+    <STitle ref={ref} commonStyles={commonStyles}>
+      {text}
+    </STitle>
+  )
 );
 
 export { Title };
+export const MTitle = motion(Title);

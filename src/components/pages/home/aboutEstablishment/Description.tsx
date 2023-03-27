@@ -1,4 +1,5 @@
-import React from 'react';
+import { forwardRef } from 'react';
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 import {
   Button,
@@ -13,7 +14,7 @@ import {
   textAlignCenter,
 } from '../../../../ui';
 
-const SContainer = styled.div`
+const SContainer = styled(motion.div)`
   ${displayFlex}
   ${flexDirectionColumn}
   ${alignItemsCenter}
@@ -45,13 +46,12 @@ interface IDescription {
   descriptionList: string[];
 }
 
-export const Description: React.FC<IDescription> = ({
-  plateTitle,
-  blockTitle,
-  descriptionList,
-}) => {
+const Description: React.FC<IDescription> = forwardRef<
+  HTMLDivElement,
+  IDescription
+>(({ plateTitle, blockTitle, descriptionList }, ref) => {
   return (
-    <SContainer>
+    <SContainer ref={ref}>
       <WhitePlate
         title={plateTitle}
         commonStyles={SWhitePlateStyles}
@@ -72,4 +72,7 @@ export const Description: React.FC<IDescription> = ({
       />
     </SContainer>
   );
-};
+});
+
+export { Description };
+export const MDescription = motion(Description);

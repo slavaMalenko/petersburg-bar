@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import { useRef, forwardRef, useImperativeHandle } from 'react';
+import { motion } from 'framer-motion';
 import styled, { StyledProps } from 'styled-components';
 import {
   fontFamilySofiaSansSemiCondensed,
@@ -11,7 +12,7 @@ import { TCommonStyles } from './commonTypes';
 type TWhitePlateStyles = StyledProps<{
   commonStyles?: TCommonStyles;
 }>;
-const SWhitePlate = styled.div(
+const SWhitePlate = styled(motion.div)(
   ({ commonStyles }: TWhitePlateStyles) => `
     ${textTransformUppercase}
     ${selectNone}
@@ -33,27 +34,27 @@ interface IWhitePlate {
   commonStyles?: TCommonStyles;
   scrollToTitle?: boolean;
 }
-const WhitePlate: React.FC<IWhitePlate> = ({
-  scrollToTitle = false,
-  title,
-  commonStyles,
-}) => {
-  const reff = useRef(null);
-  return (
-    <SWhitePlate
-      commonStyles={commonStyles}
-      onClick={() =>
-        scrollToTitle &&
-        window.scrollTo({
-          top: reff.current.offsetTop - 30,
-          behavior: 'smooth',
-        })
-      }
-      ref={reff}
-    >
-      {title}
-    </SWhitePlate>
-  );
-};
+const WhitePlate = forwardRef<HTMLDivElement, IWhitePlate>(
+  ({ scrollToTitle = false, title, commonStyles }, initRef) => {
+    const ref = useRef<HTMLDivElement>(null);
+    useImperativeHandle(initRef, () => ref.current);
+    return (
+      <SWhitePlate
+        ref={ref}
+        commonStyles={commonStyles}
+        onClick={() =>
+          scrollToTitle &&
+          window.scrollTo({
+            top: ref.current.offsetTop - 30,
+            behavior: 'smooth',
+          })
+        }
+      >
+        {title}
+      </SWhitePlate>
+    );
+  }
+);
 
 export { WhitePlate };
+export const MWhitePlate = motion(WhitePlate);

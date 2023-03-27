@@ -1,4 +1,12 @@
-import React, { useState, useRef, useEffect, useCallback, memo } from 'react';
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+  forwardRef,
+  useImperativeHandle,
+} from 'react';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { TRetractableBlock } from './RetractableBlocks';
 import Vector from './img/Vector.png';
@@ -60,9 +68,10 @@ interface IRetractableBlock extends TRetractableBlock {
   setOpenBlockIndex: React.Dispatch<React.SetStateAction<number>>;
   index: number;
 }
-export const RetractableBlock: React.FC<IRetractableBlock> = memo(
-  ({ title, description, isOpenBlock, setOpenBlockIndex, index }) => {
-    const ref = useRef<any>();
+const RetractableBlock = forwardRef<HTMLDivElement, IRetractableBlock>(
+  ({ title, description, isOpenBlock, setOpenBlockIndex, index }, initRef) => {
+    const ref = useRef<HTMLDivElement>();
+    useImperativeHandle(initRef, () => ref.current);
     const [contentHeight, setContentHeight] = useState(0);
     const [height, setHeight] = useState<number | undefined>();
     const onToggleHeight = useCallback(() => {
@@ -89,3 +98,5 @@ export const RetractableBlock: React.FC<IRetractableBlock> = memo(
     );
   }
 );
+export { RetractableBlock };
+export const MRetractableBlock = motion(RetractableBlock);
