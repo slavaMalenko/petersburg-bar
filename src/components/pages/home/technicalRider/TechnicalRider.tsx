@@ -12,7 +12,7 @@ import { TechnicalRiderList } from './TechnicalRiderList';
 import { SoundEngineers } from './SoundEngineers';
 
 const Section = styled(motion.section)`
-  margin-bottom: 300px;
+  margin-bottom: 30px;
 `;
 const SContainer = styled.div`
   ${displayFlex}

@@ -3,6 +3,7 @@ import { Preview } from './preview';
 import { Menu } from './menu';
 import { AboutEstablishments } from './aboutEstablishment';
 import { TechnicalRider } from './technicalRider';
+import { Contacts } from './contacts';
 
 const Home: React.FC = ({}) => (
   <>
@@ -10,6 +11,7 @@ const Home: React.FC = ({}) => (
     <Menu />
     <AboutEstablishments />
     <TechnicalRider />
+    <Contacts />
   </>
 );
 
