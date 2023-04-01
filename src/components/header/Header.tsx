@@ -1,13 +1,15 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import logo from './img/logo.png';
-import { colorWhite, fontFamilySofiaSansSemiCondensed, Button } from '../../ui';
+import { textStyles, Button } from '../../ui';
 import {
   setNavigationActive,
   useAppDicpatch,
   useAppSelector,
 } from '../../store';
 import { Navigation } from './Navigation';
+
+const { colorWhite, fontFamilySofiaSansSemiCondensed } = textStyles;
 
 const SHeader = styled.header`
   display: flex;

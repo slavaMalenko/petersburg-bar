@@ -1,7 +1,7 @@
 import React, { useState, ReactNode, memo } from 'react';
 import { motion } from 'framer-motion';
 import { MRetractableBlock } from './RetractableBlock';
-import { appearanceOnTheLeft } from '../animation';
+import { animation } from '../animation';
 
 export type TRetractableBlock = {
   title: string;
@@ -27,7 +27,7 @@ export const RetractableBlocks: React.FC<IRetractableBlocks> = memo(
         {descriptionBlocks.map(({ title, description }, index) => (
           <MRetractableBlock
             custom={index}
-            variants={appearanceOnTheLeft()}
+            variants={animation.appearanceOnTheLeft()}
             isOpenBlock={index === openBlockIndex}
             setOpenBlockIndex={setOpenBlockIndexAndSave}
             index={index}

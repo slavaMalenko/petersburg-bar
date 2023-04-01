@@ -1,15 +1,15 @@
 import styled, { StyledProps } from 'styled-components';
-import {
+import { flexStyles, textStyles, commonStyles } from '../../../../../ui';
+import { useState } from 'react';
+import { PreviewConcerts } from './PreviewConcerts';
+
+const { displayFlex, flexDirectionColumn } = flexStyles;
+const {
   colorWhite,
-  displayFlex,
-  flexDirectionColumn,
   fontFamilySofiaSansSemiCondensed,
   textAlignCenter,
   textTransformUppercase,
-  pointer,
-} from '../../../../../ui';
-import { useState } from 'react';
-import { PreviewConcerts } from './PreviewConcerts';
+} = textStyles;
 
 const SConcertsContainer = styled.div`
   width: 32%;
@@ -43,7 +43,7 @@ const SConcertsNavigateItem = styled.div(
     transition: all .2s linear;
     ${isActive ? `background: rgba(213, 98, 29, 0.1);` : ''}
     ${fontFamilySofiaSansSemiCondensed}
-    ${pointer}
+    ${commonStyles.pointer}
     ${colorWhite}
     ${textAlignCenter}
   `

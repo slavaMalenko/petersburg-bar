@@ -1,17 +1,17 @@
 import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import styled, { StyledProps } from 'styled-components';
-import {
+import { textStyles, flexStyles, commonStyles } from './commonStyles';
+import { TCommonStyles } from './commonTypes';
+
+const { displayFlex, justifyCenter } = flexStyles;
+const { selectNone, pointer } = commonStyles;
+const {
   colorWhite,
   textTransformUppercase,
   fontFamilySofiaSansSemiCondensed,
   textAlignCenter,
-  selectNone,
-  pointer,
-  displayFlex,
-  justifyCenter,
-} from './commonStyles';
-import { TCommonStyles } from './commonTypes';
+} = textStyles;
 
 const SContainer = styled.div`
   ${displayFlex}

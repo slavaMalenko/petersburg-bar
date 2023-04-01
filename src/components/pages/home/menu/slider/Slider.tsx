@@ -8,18 +8,17 @@ import styled, {
 import Vector from './img/Vector.png';
 import { useAppSelector } from '../../../../../store';
 import { MMenuItem } from './MenuItem';
-import {
+import { flexStyles, animation, commonStyles } from '../../../../../ui';
+
+const {
   displayFlex,
   justifyCenter,
   justifySpaceBetween,
   alignItemsCenter,
   flexWrap,
-  pointer,
   flexDirectionColumn,
-  selectNone,
-  cursorDefault,
-  appearanceOnTheTop,
-} from '../../../../../ui';
+} = flexStyles;
+const { pointer, selectNone, cursorDefault } = commonStyles;
 
 const SliderContainer = styled(motion.div)`
   margin-bottom: 20px;
@@ -127,7 +126,7 @@ const Slider = forwardRef<HTMLDivElement, ISlider>(({}, ref) => {
           {menuItems.map((data, index) => (
             <MMenuItem
               custom={index}
-              variants={appearanceOnTheTop()}
+              variants={animation.appearanceOnTheTop()}
               key={`${data} ${index}`}
               data={data}
             />

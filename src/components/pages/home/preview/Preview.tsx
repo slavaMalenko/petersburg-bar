@@ -2,16 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 import photo_preview from './img/photo_preview.png';
-import {
-  MWhitePlate,
-  appearanceOnTheLeft,
-  colorWhite,
-  displayFlex,
-  fontFamilySofiaSansSemiCondensed,
-  justifySpaceBetween,
-  textTransformUppercase,
-} from '../../../../ui';
+import { MWhitePlate, animation, flexStyles, textStyles } from '../../../../ui';
 import { Concerts } from './Concerts/Concerts';
+
+const { displayFlex, justifySpaceBetween } = flexStyles;
+const { colorWhite, fontFamilySofiaSansSemiCondensed, textTransformUppercase } =
+  textStyles;
+const appearanceOnTheLeft = animation.appearanceOnTheLeft;
 
 const SPreviewContent = styled(motion.section)`
   ${displayFlex}

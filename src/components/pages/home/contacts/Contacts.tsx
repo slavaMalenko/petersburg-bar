@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { css } from 'styled-components';
-import { MTitle, MWhitePlate, appearanceOnTheTop } from '../../../../ui';
+import { MTitle, MWhitePlate, animation } from '../../../../ui';
 
+const appearanceOnTheTop = animation.appearanceOnTheTop;
 export const SWhitePlateStyles = css`
   font-size: 16px;
   max-width: 240px;

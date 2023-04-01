@@ -1,17 +1,16 @@
 import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import {
+import { flexStyles, textStyles, commonStyles } from '../../../../../ui';
+
+const {
   displayFlex,
   justifySpaceBetween,
   alignItemsCenter,
-  fontFamilySofiaSansSemiCondensed,
   flexDirectionColumn,
-  colorWhite,
-  pointer,
-  selectNone,
-  hoverFrame,
-} from '../../../../../ui';
+} = flexStyles;
+const { pointer, selectNone, hoverFrame } = commonStyles;
+const { fontFamilySofiaSansSemiCondensed, colorWhite } = textStyles;
 
 export const SPrice = styled.div`
   font-weight: 700;

@@ -5,14 +5,18 @@ import {
   Button,
   Title,
   WhitePlate,
-  alignItemsCenter,
-  colorWhite,
-  displayFlex,
-  flexDirectionColumn,
-  fontFamilySofiaSansSemiCondensed,
-  justifySpaceBetween,
-  textAlignCenter,
+  textStyles,
+  flexStyles,
 } from '../../../../ui';
+
+const {
+  displayFlex,
+  justifySpaceBetween,
+  alignItemsCenter,
+  flexDirectionColumn,
+} = flexStyles;
+const { colorWhite, fontFamilySofiaSansSemiCondensed, textAlignCenter } =
+  textStyles;
 
 const SContainer = styled(motion.div)`
   ${displayFlex}

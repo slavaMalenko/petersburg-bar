@@ -1,15 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
-import {
-  MTitle,
-  alignItemsCenter,
-  appearanceOnTheTop,
-  displayFlex,
-  flexDirectionColumn,
-} from '../../../../ui';
+import { MTitle, flexStyles, animation } from '../../../../ui';
 import { useAppSelector } from '../../../../store';
 import { SoundEngineer } from './SoundEngineer';
+
+const { displayFlex, alignItemsCenter, flexDirectionColumn } = flexStyles;
 
 const SContainer = styled(motion.div)`
   width: 45%;
@@ -41,7 +37,7 @@ export const SoundEngineers: React.FC = ({}) => {
     >
       <MTitle
         custom={1}
-        variants={appearanceOnTheTop()}
+        variants={animation.appearanceOnTheTop()}
         commonStyles={SoundEngineersStyles}
         text='Звукорежиссеры клуба МАНХЭТТЕН'
       />

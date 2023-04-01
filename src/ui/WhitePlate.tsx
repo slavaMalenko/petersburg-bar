@@ -1,13 +1,11 @@
 import { useRef, forwardRef, useImperativeHandle } from 'react';
 import { motion } from 'framer-motion';
 import styled, { StyledProps } from 'styled-components';
-import {
-  fontFamilySofiaSansSemiCondensed,
-  pointer,
-  selectNone,
-  textTransformUppercase,
-} from './commonStyles';
+import { commonStyles as additionalStyles, textStyles } from './commonStyles';
 import { TCommonStyles } from './commonTypes';
+
+const { textTransformUppercase, fontFamilySofiaSansSemiCondensed } = textStyles;
+const { selectNone, pointer } = additionalStyles;
 
 type TWhitePlateStyles = StyledProps<{
   commonStyles?: TCommonStyles;

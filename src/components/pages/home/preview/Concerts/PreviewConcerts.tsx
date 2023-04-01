@@ -2,13 +2,9 @@ import { memo } from 'react';
 import { motion } from 'framer-motion';
 import styled, { keyframes } from 'styled-components';
 import { useAppSelector } from '../../../../../store';
-import {
-  alignItemsCenter,
-  displayFlex,
-  justifyCenter,
-  textAlignCenter,
-  pointer,
-} from '../../../../../ui';
+import { flexStyles, textStyles, commonStyles } from '../../../../../ui';
+
+const { displayFlex, alignItemsCenter, justifyCenter } = flexStyles;
 
 const SPreviewConcerts = styled.div`
   flex-wrap: wrap;
@@ -17,7 +13,7 @@ const SPreviewConcerts = styled.div`
 `;
 const SPreview = styled.div`
   width: 50%;
-  ${textAlignCenter}
+  ${textStyles.textAlignCenter}
   ${displayFlex}
   ${alignItemsCenter}
   ${justifyCenter}
@@ -34,7 +30,7 @@ const SPreviewImg = styled(motion.img)`
   border-radius: 30px;
   opacity: 0;
   animation: ${FadeInAnimation} 1s forwards;
-  ${pointer}
+  ${commonStyles.pointer}
 `;
 let count = 0;
 const getСoordinateValue: () => {

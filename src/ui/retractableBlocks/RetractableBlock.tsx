@@ -10,16 +10,12 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { TRetractableBlock } from './RetractableBlocks';
 import Vector from './img/Vector.png';
-import {
-  alignItemsCenter,
-  colorWhite,
-  displayFlex,
-  fontFamilySofiaSansSemiCondensed,
-  justifySpaceBetween,
-  pointer,
-  selectNone,
-  textTransformUppercase,
-} from '../commonStyles';
+import { flexStyles, textStyles, commonStyles } from '../commonStyles';
+
+const { displayFlex, justifySpaceBetween, alignItemsCenter } = flexStyles;
+const { pointer, selectNone } = commonStyles;
+const { colorWhite, fontFamilySofiaSansSemiCondensed, textTransformUppercase } =
+  textStyles;
 
 const SContainer = styled.div<{ height: number; isOpenBlock: boolean }>`
   ${fontFamilySofiaSansSemiCondensed}

@@ -1,14 +1,15 @@
 import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import styled, { StyledProps } from 'styled-components';
-import {
+import { commonStyles as additionalStyles, textStyles } from './commonStyles';
+import { TCommonStyles } from './commonTypes';
+
+const {
   colorWhite,
   textTransformUppercase,
   fontFamilySofiaSansSemiCondensed,
   textAlignCenter,
-  selectNone,
-} from './commonStyles';
-import { TCommonStyles } from './commonTypes';
+} = textStyles;
 
 type TTitleStyles = StyledProps<{
   commonStyles?: TCommonStyles;
@@ -20,7 +21,7 @@ const STitle = styled(motion.h1)(
     font-weight: 900;
     margin-top: 20px;
     margin-bottom: 20px;
-    ${selectNone}
+    ${additionalStyles.selectNone}
     ${textAlignCenter}
     ${fontFamilySofiaSansSemiCondensed}
     ${textTransformUppercase}

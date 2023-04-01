@@ -1,19 +1,18 @@
 import { forwardRef, FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import {
-  fontFamilySofiaSansSemiCondensed,
-  selectNone,
-  textTransformUppercase,
-  colorWhite,
-  pointer,
-  textAlignCenter,
-  displayFlex,
-  justifyCenter,
-  alignItemsCenter,
-} from '../commonStyles';
+import { textStyles, flexStyles, commonStyles } from '../commonStyles';
 import telegramIcon from './img/telegram-icon.png';
 import vkIcon from './img/vk-icon.png';
+
+const { displayFlex, justifyCenter, alignItemsCenter } = flexStyles;
+const { pointer, selectNone } = commonStyles;
+const {
+  fontFamilySofiaSansSemiCondensed,
+  textTransformUppercase,
+  colorWhite,
+  textAlignCenter,
+} = textStyles;
 
 const SIconHover = styled(motion.div)`
   background: #ff6200;

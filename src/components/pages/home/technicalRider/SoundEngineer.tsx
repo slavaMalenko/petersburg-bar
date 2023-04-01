@@ -4,20 +4,23 @@ import styled from 'styled-components';
 import {
   MTelegramIcon,
   MVkIcon,
-  alignItemsCenter,
-  appearanceOnTheLeft,
-  appearanceOnTheRight,
-  colorWhite,
-  displayFlex,
-  flexDirectionColumn,
-  fontFamilySofiaSansSemiCondensed,
-  hoverFrame,
-  justifySpaceAround,
-  pointer,
-  selectNone,
-  textTransformUppercase,
+  flexStyles,
+  animation,
+  textStyles,
+  commonStyles,
 } from '../../../../ui';
 import { soundEngineer } from '../../../../store';
+
+const {
+  displayFlex,
+  alignItemsCenter,
+  flexDirectionColumn,
+  justifySpaceAround,
+} = flexStyles;
+const { hoverFrame, pointer, selectNone } = commonStyles;
+const { colorWhite, fontFamilySofiaSansSemiCondensed, textTransformUppercase } =
+  textStyles;
+const { appearanceOnTheLeft, appearanceOnTheRight } = animation;
 
 const SName = styled(motion.div)`
   ${colorWhite};

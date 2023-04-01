@@ -2,14 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { MDescription } from './Description';
-import {
-  appearanceOnTheTop,
-  cursorGrab,
-  cursorGrabbing,
-  displayFlex,
-  justifySpaceBetween,
-} from '../../../../ui';
+import { animation, commonStyles, flexStyles } from '../../../../ui';
 import Rectangle from './img/Rectangle.png';
+
+const { displayFlex, justifySpaceBetween } = flexStyles;
+const { cursorGrab, cursorGrabbing } = commonStyles;
+const appearanceOnTheTop = animation.appearanceOnTheTop;
 
 const descriptionList = [
   'Quam massa pretium et venenatis. Fringilla sagittis, arcu massa, in sem viverra consequat. Tempus sed est interdum eget nisi, nec fames. Eget amet hac varius aliquam. Mattis egestas suspendisse convallis eu arcu et aliquet.',
