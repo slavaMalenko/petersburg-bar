@@ -21,7 +21,7 @@ const SWhitePlateStyles = css`
   font-weight: 900;
 `;
 
-const appearanceOnTheTop = animation.appearanceOnTheTop;
+const { appearanceOnTheTop } = animation;
 export const TechnicalRider: React.FC = ({}) => (
   <Section initial='hidden' whileInView='visible' viewport={{ amount: 0.1 }}>
     <MWhitePlate

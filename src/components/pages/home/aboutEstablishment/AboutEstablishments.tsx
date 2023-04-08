@@ -7,7 +7,7 @@ import Rectangle from './img/Rectangle.png';
 
 const { displayFlex, justifySpaceBetween } = flexStyles;
 const { cursorGrab, cursorGrabbing } = commonStyles;
-const appearanceOnTheTop = animation.appearanceOnTheTop;
+const { appearanceOnTheTop } = animation;
 
 const descriptionList = [
   'Quam massa pretium et venenatis. Fringilla sagittis, arcu massa, in sem viverra consequat. Tempus sed est interdum eget nisi, nec fames. Eget amet hac varius aliquam. Mattis egestas suspendisse convallis eu arcu et aliquet.',

@@ -15,6 +15,9 @@ export module commonStyles {
   export const selectNone = css`
     user-select: none;
   `;
+  export const overflowHidden= css`
+    overflow: hidden;
+  `;
 
   export const hoverFrame = css`
     position: relative;
