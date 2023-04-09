@@ -1,4 +1,31 @@
-export module animation {
+import { Variants, CustomDomComponent } from 'framer-motion';
+import { ReactNode, ElementType } from 'react';
+
+export namespace animationBlock {
+  export type TAnimateBlock = {
+    block: ReactNode | CustomDomComponent<React.RefAttributes<HTMLDivElement>>;
+    custom: number;
+    animation: Variants;
+    props?: Object;
+    children?: ReactNode;
+  };
+  export const getAnimateBlock: (arg: TAnimateBlock) => ReactNode = ({
+    block,
+    custom,
+    children,
+    animation,
+    props = {},
+  }) => {
+    const Block = block as ElementType;
+    return (
+      <Block custom={custom} variants={animation} {...props}>
+        {children && children}
+      </Block>
+    );
+  };
+}
+
+export namespace animationVariants {
   export const appearanceOnTheLeft: (
     visibleOpacity?: number,
     transition?: number,
@@ -8,7 +35,7 @@ export module animation {
       x: -100,
       opacity: 0,
     },
-    visible: (custom) => ({
+    visible: (custom: number) => ({
       x: 0,
       opacity: visibleOpacity,
       transition: { type: 'tween', delay: custom * transition, duration },
@@ -24,7 +51,7 @@ export module animation {
       x: 100,
       opacity: 0,
     },
-    visible: (custom) => ({
+    visible: (custom: number) => ({
       x: 0,
       opacity: visibleOpacity,
       transition: { type: 'tween', delay: custom * transition, duration },
@@ -39,7 +66,7 @@ export module animation {
       y: -100,
       opacity: 0,
     },
-    visible: (custom) => ({
+    visible: (custom: number) => ({
       y: 0,
       opacity: visibleOpacity,
       transition: { delay: custom * transition },

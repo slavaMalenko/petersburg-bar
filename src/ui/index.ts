@@ -1,5 +1,5 @@
 export { flexStyles, commonStyles, textStyles } from './commonStyles';
-export { animation } from './animation';
+export { animationVariants, animationBlock } from './animation';
 
 export { Container } from './Container';
 export { EmptyComponent } from './EmptyComponent';

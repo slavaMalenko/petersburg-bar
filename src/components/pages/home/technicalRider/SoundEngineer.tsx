@@ -5,7 +5,7 @@ import {
   MTelegramIcon,
   MVkIcon,
   flexStyles,
-  animation,
+  animationVariants,
   textStyles,
   commonStyles,
 } from '../../../../ui';
@@ -20,7 +20,7 @@ const {
 const { hoverFrame, pointer, selectNone } = commonStyles;
 const { colorWhite, fontFamilySofiaSansSemiCondensed, textTransformUppercase } =
   textStyles;
-const { appearanceOnTheLeft, appearanceOnTheRight } = animation;
+const { appearanceOnTheLeft, appearanceOnTheRight } = animationVariants;
 
 const SName = styled(motion.div)`
   ${colorWhite};

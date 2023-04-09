@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export module flexStyles {
+export namespace flexStyles {
   export const displayFlex = css`
     display: flex;
   `;

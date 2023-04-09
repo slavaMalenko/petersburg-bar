@@ -1,9 +1,15 @@
-import React, { ReactNode, ElementType } from 'react';
+import React, { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { animation, commonStyles, textStyles } from '../../../../ui';
+import {
+  animationVariants,
+  animationBlock,
+  commonStyles,
+  textStyles,
+} from '../../../../ui';
 
-const { appearanceOnTheLeft } = animation;
+const { appearanceOnTheLeft } = animationVariants;
+const { selectNone, pointer } = commonStyles;
 const { textTransformUppercase, fontFamilySofiaSansSemiCondensed, colorWhite } =
   textStyles;
 const SContainer = styled(motion.div)`
@@ -19,7 +25,7 @@ const SInfoBlock = styled(motion.div)`
   margin-left: 0;
   margin-bottom: 25px;
   transition: all 0.2s linear;
-  ${commonStyles.pointer}
+  ${pointer}
   &:hover {
     margin-left: 20px;
   }
@@ -31,6 +37,7 @@ const SInfoBlockTitle = styled(motion.h1)`
   font-weight: 700;
   font-size: 21px;
   margin-bottom: 15px;
+  ${selectNone}
   ${textTransformUppercase}
 `;
 const SInfoBlockDescription = styled(motion.p)`
@@ -69,21 +76,17 @@ const info: infoItem[] = [
   },
 ];
 
-type TAnimateBlock = (
-  block: ReactNode,
-  index: number,
-  children?: ReactNode
-) => ReactNode;
-const animateBlock: TAnimateBlock = (block, index, children) => {
-  const Block = block as ElementType;
-  return (
-    <Block custom={index} variants={appearanceOnTheLeft()}>
-      {children && children}
-    </Block>
-  );
-};
-
 const ContactsInfo: React.FC = ({}) => {
+  const getAnimateBlock: (
+    args: Omit<animationBlock.TAnimateBlock, 'animation'>
+  ) => ReactNode = ({ block, custom, children }) =>
+    animationBlock.getAnimateBlock({
+      block,
+      custom,
+      children,
+      animation: appearanceOnTheLeft(),
+    });
+
   return (
     <SContainer
       initial='hidden'
@@ -92,9 +95,21 @@ const ContactsInfo: React.FC = ({}) => {
     >
       {info.map(({ title, descrition, dividingLine }: infoItem, index) => (
         <SInfoBlock key={`${descrition} ${index}`}>
-          {animateBlock(SInfoBlockTitle, index, title)}
-          {animateBlock(SInfoBlockDescription, index, descrition)}
-          {dividingLine && animateBlock(SInfoBlockDivider, index)}
+          {getAnimateBlock({
+            block: SInfoBlockTitle,
+            custom: index,
+            children: title,
+          })}
+          {getAnimateBlock({
+            block: SInfoBlockDescription,
+            custom: index,
+            children: descrition,
+          })}
+          {dividingLine &&
+            getAnimateBlock({
+              block: SInfoBlockDivider,
+              custom: index,
+            })}
         </SInfoBlock>
       ))}
     </SContainer>

@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-export module commonStyles {
+export namespace commonStyles {
   export const pointer = css`
     cursor: pointer;
   `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
-import { MTitle, flexStyles, animation } from '../../../../ui';
+import { MTitle, flexStyles, animationVariants } from '../../../../ui';
 import { useAppSelector } from '../../../../store';
 import { SoundEngineer } from './SoundEngineer';
 
@@ -37,7 +37,7 @@ export const SoundEngineers: React.FC = ({}) => {
     >
       <MTitle
         custom={1}
-        variants={animation.appearanceOnTheTop()}
+        variants={animationVariants.appearanceOnTheTop()}
         commonStyles={SoundEngineersStyles}
         text='Звукорежиссеры клуба МАНХЭТТЕН'
       />

@@ -4,14 +4,14 @@ import styled, { css } from 'styled-components';
 import {
   MTitle,
   MWhitePlate,
-  animation,
+  animationVariants,
   commonStyles,
   flexStyles,
 } from '../../../../ui';
 import { ContactsInfo } from './ContactsInfo';
 import preview_map from './img/preview_map.png';
 
-const { appearanceOnTheTop } = animation;
+const { appearanceOnTheTop } = animationVariants;
 export const SWhitePlateStyles = css`
   font-size: 16px;
   max-width: 240px;

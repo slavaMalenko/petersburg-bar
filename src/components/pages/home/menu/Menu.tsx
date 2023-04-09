@@ -1,12 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { css } from 'styled-components';
-import { MButton, MTitle, MWhitePlate, animation } from '../../../../ui';
+import {
+  MButton,
+  MTitle,
+  MWhitePlate,
+  animationVariants,
+} from '../../../../ui';
 import { MSlider } from './slider';
 import { useNavigate } from 'react-router-dom';
 import { setNavigationActive, useAppDicpatch } from '../../../../store';
 
-const appearanceOnTheTop = animation.appearanceOnTheTop;
+const { appearanceOnTheTop } = animationVariants;
 export const SWhitePlateStyles = css`
   font-size: 16px;
   max-width: 240px;

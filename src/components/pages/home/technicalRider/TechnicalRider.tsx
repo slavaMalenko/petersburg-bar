@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
-import { MTitle, MWhitePlate, animation, flexStyles } from '../../../../ui';
+import {
+  MTitle,
+  MWhitePlate,
+  animationVariants,
+  flexStyles,
+} from '../../../../ui';
 import { TechnicalRiderList } from './TechnicalRiderList';
 import { SoundEngineers } from './SoundEngineers';
 
@@ -21,7 +26,7 @@ const SWhitePlateStyles = css`
   font-weight: 900;
 `;
 
-const { appearanceOnTheTop } = animation;
+const { appearanceOnTheTop } = animationVariants;
 export const TechnicalRider: React.FC = ({}) => (
   <Section initial='hidden' whileInView='visible' viewport={{ amount: 0.1 }}>
     <MWhitePlate

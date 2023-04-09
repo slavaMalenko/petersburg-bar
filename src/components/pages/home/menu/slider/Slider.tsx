@@ -8,7 +8,7 @@ import styled, {
 import Vector from './img/Vector.png';
 import { useAppSelector } from '../../../../../store';
 import { MMenuItem } from './MenuItem';
-import { flexStyles, animation, commonStyles } from '../../../../../ui';
+import { flexStyles, animationVariants, commonStyles } from '../../../../../ui';
 
 const {
   displayFlex,
@@ -126,7 +126,7 @@ const Slider = forwardRef<HTMLDivElement, ISlider>(({}, ref) => {
           {menuItems.map((data, index) => (
             <MMenuItem
               custom={index}
-              variants={animation.appearanceOnTheTop()}
+              variants={animationVariants.appearanceOnTheTop()}
               key={`${data} ${index}`}
               data={data}
             />

@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export module textStyles {
+export namespace textStyles {
   export const fontFamilySofiaSansSemiCondensed = css`
     font-family: 'Sofia Sans Semi Condensed', sans-serif;
   `;
