@@ -37,7 +37,6 @@ const SDescription = styled.div`
 const SWhitePlateStyles = css`
   padding: 10px 35px;
   font-size: 16px;
-  max-width: 240px;
   font-weight: 900;
 `;
 const SButtonStyles = css`
@@ -48,10 +47,11 @@ interface IDescription {
   plateTitle: string;
   blockTitle: string;
   descriptionList: string[];
+  onClick?: () => void;
 }
 
 const Description = forwardRef<HTMLDivElement, IDescription>(
-  ({ plateTitle, blockTitle, descriptionList }, ref) => {
+  ({ plateTitle, blockTitle, descriptionList, onClick }, ref) => {
     return (
       <SContainer ref={ref}>
         <WhitePlate
@@ -69,6 +69,7 @@ const Description = forwardRef<HTMLDivElement, IDescription>(
           marginBottom={10}
           text='Подробнее'
           commonStyles={SButtonStyles}
+          onClick={onClick}
           center
           hoverRight
         />

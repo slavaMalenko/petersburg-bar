@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { Container, EmptyComponent } from './ui';
 import { useAppSelector } from './store';
-import { Footer, Header, Home } from './components';
+import { Cooperation, Footer, Header, Home } from './components';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -21,9 +21,9 @@ const App: React.FC = () => {
       <main>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/navigation' element={<EmptyComponent />} />
+          <Route path='/menu' element={<EmptyComponent />} />
           <Route path='/poster' element={<EmptyComponent />} />
-          <Route path='/cooperation' element={<EmptyComponent />} />
+          <Route path='/cooperation' element={<Cooperation />} />
           <Route path='/gallery' element={<EmptyComponent />} />
           <Route path='/news' element={<EmptyComponent />} />
         </Routes>

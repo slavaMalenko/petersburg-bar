@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { MDescription } from './Description';
 import { animationVariants, commonStyles, flexStyles } from '../../../../ui';
 import Rectangle from './img/Rectangle.png';
+import { setNavigationActive, useAppDicpatch } from '../../../../store';
 
 const { displayFlex, justifySpaceBetween } = flexStyles;
 const { cursorGrab, cursorGrabbing } = commonStyles;
@@ -30,6 +32,8 @@ const SImg = styled(motion.img)`
 `;
 
 export const AboutEstablishments: React.FC = ({}) => {
+  const navigate = useNavigate();
+  const dispatch = useAppDicpatch();
   return (
     <SContainer
       initial='hidden'
@@ -42,6 +46,10 @@ export const AboutEstablishments: React.FC = ({}) => {
         plateTitle='Top “Manhattan” events'
         blockTitle='Банкеты'
         descriptionList={descriptionList}
+        onClick={() => {
+          navigate('/cooperation');
+          dispatch(setNavigationActive('/cooperation'));
+        }}
       />
       <SImg
         drag='x'
