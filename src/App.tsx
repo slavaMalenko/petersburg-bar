@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { Container, EmptyComponent } from './ui';
 import { useAppSelector } from './store';
-import { Header, Home } from './components';
+import { Footer, Header, Home } from './components';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -28,6 +28,8 @@ const App: React.FC = () => {
           <Route path='/news' element={<EmptyComponent />} />
         </Routes>
       </main>
+
+      <Footer />
     </Container>
   );
 };

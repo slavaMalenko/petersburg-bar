@@ -19,6 +19,9 @@ export const SWhitePlateStyles = css`
   font-weight: 900;
 `;
 const { displayFlex, justifySpaceBetween } = flexStyles;
+const Section = styled(motion.section)`
+  margin: 0 0 100px;
+`;
 const SContactsContainer = styled(motion.div)`
   ${commonStyles.overflowHidden}
   ${displayFlex}
@@ -33,11 +36,7 @@ const SContactsMap = styled(motion.div)`
 
 const Contacts: React.FC = ({}) => {
   return (
-    <motion.section
-      initial='hidden'
-      whileInView='visible'
-      viewport={{ amount: 0.15 }}
-    >
+    <Section initial='hidden' whileInView='visible' viewport={{ amount: 0.15 }}>
       <MWhitePlate
         custom={1}
         variants={appearanceOnTheTop()}
@@ -51,7 +50,7 @@ const Contacts: React.FC = ({}) => {
         <ContactsInfo />
         <SContactsMap />
       </SContactsContainer>
-    </motion.section>
+    </Section>
   );
 };
 

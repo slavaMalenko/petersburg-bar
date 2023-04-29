@@ -4,6 +4,7 @@ export { animationVariants, animationBlock } from './animation';
 export { Container } from './Container';
 export { EmptyComponent } from './EmptyComponent';
 export { WhitePlate, MWhitePlate } from './WhitePlate';
+export { Dividing } from './Dividing';
 export { Title, MTitle } from './Title';
 export { Button, MButton } from './Button';
 export { RetractableBlocks } from './retractableBlocks';

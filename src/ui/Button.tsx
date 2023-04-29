@@ -121,6 +121,7 @@ const Button = forwardRef<HTMLDivElement, IButton>(
     ) : (
       <SButton
         ref={ref}
+        onClick={() => onClick && onClick()}
         verticalMargin={verticalMargin}
         marginBottom={marginBottom}
         filling={filling}
